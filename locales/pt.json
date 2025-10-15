@@ -1,0 +1,16 @@
+{
+    "meta": {
+        "title": "Welcome to my multilingual website",
+        "description": "A simple and SEO-friendly multilingual website built with Next.js."
+    },
+    "home": {
+        "title": "Bem vindo!",
+        "subtitle": "This is the homepage.",
+        "button": "Get Started"
+    },
+    "about": {
+        "title": "About Us",
+        "text": "We are passionate about building web apps.",
+        "button": "Learn More"
+    }
+}

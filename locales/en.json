@@ -1,0 +1,25 @@
+{
+    "meta": {
+        "title": "Welcome to my multilingual website",
+        "description": "A simple and SEO-friendly multilingual website built with Next.js."
+    },
+    "home": {
+        "front": "Front-end",
+        "dev": "Developer",
+        "subtitle": [
+            { "text": "Crafting digital experiences with", "highlight": false },
+            { "text": " vision", "highlight": true },
+            { "text": " and", "highlight": false },
+            { "text": " precision.", "highlight": true }
+        ]
+    },
+    "about": {
+        "title": [
+            { "text": "Get To", "highlight": false },
+            { "text": " Know", "highlight": true },
+            { "text": " Me", "highlight": false }
+        ],
+        "text": "We are passionate about building web apps.",
+        "button": "Learn More"
+    }
+}

@@ -1,26 +1,50 @@
 @import "tailwindcss";
+@import "./satoshi.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #0a090f;
+    --main-text-color: #efefe6;
+    --hightlight-text: #fff000;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-main-text: var(--main-text-color);
+    --color-hightlight-text: var(--hightlight-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+}
+
+h1 {
+    font-size: 15.625rem;
+    font-family: "Satoshi-Black";
+    color: var(--main-text-color);
+    letter-spacing: -20px;
+}
+
+h2 {
+    font-size: 6rem;
+    font-family: "Satoshi-Black";
+    color: var(--main-text-color);
+    line-height: 76px;
+    letter-spacing: -5px;
+}
+
+.text-highlight {
+    color: var(--hightlight-text) !important;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+h1.lineSpacing {
+    line-height: 210px;
 }
