@@ -19,7 +19,20 @@
             { "text": " Know", "highlight": true },
             { "text": " Me", "highlight": false }
         ],
-        "text": "We are passionate about building web apps.",
-        "button": "Learn More"
+        "info": [
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
+                "bold": false
+            },
+            {
+                "text": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
+                "bold": false
+            },
+            {
+                "text": "Tortor integer nibh netus etiam mauris.",
+                "bold": true
+            }
+        ],
+        "button": "Get in Touch"
     }
 }

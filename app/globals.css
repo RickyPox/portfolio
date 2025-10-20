@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./satoshi.css";
+@import "./clash-display.css";
 
 :root {
     --background: #0a090f;
@@ -36,6 +37,15 @@ h2 {
     letter-spacing: -5px;
 }
 
+p {
+    font-size: 1.5rem;
+    font-family: "ClashDisplay-Light";
+    color: var(--main-text-color);
+}
+p.bold {
+    font-family: "ClashDisplay-Bold";
+}
+
 .text-highlight {
     color: var(--hightlight-text) !important;
 }
@@ -45,6 +55,10 @@ h2 {
     grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
-h1.lineSpacing {
+h1.line-spacing {
     line-height: 210px;
+}
+
+.clip-mask {
+    clip-path: polygon(99% 0, 99% 6%, 100% 7%, 100% 100%, 6% 100%, 0 94%, 0 0);
 }
