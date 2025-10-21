@@ -6,12 +6,14 @@
     --background: #0a090f;
     --main-text-color: #efefe6;
     --hightlight-text: #fff000;
+    --button-background: linear-gradient(to right, #fff000, #ffd54f);
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-main-text: var(--main-text-color);
     --color-hightlight-text: var(--hightlight-text);
+    --color-button-background: var(--button-background);
 }
 
 html {
@@ -39,7 +41,7 @@ h2 {
 
 p {
     font-size: 1.5rem;
-    font-family: "ClashDisplay-Light";
+    font-family: "ClashDisplay-ExtraLight";
     color: var(--main-text-color);
 }
 p.bold {
@@ -53,6 +55,8 @@ p.bold {
 .main-grid {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0px 75px;
 }
 
 h1.line-spacing {
@@ -61,4 +65,26 @@ h1.line-spacing {
 
 .clip-mask {
     clip-path: polygon(99% 0, 99% 6%, 100% 7%, 100% 100%, 6% 100%, 0 94%, 0 0);
+}
+
+.image-container {
+    position: relative;
+    isolation: isolate; /* garante que o pseudo-elemento não escape do container */
+}
+
+.image-container::before {
+    max-height: 600px;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-main-text); /* cor do contorno */
+    clip-path: polygon(99% 0, 99% 6%, 100% 7%, 100% 100%, 6% 100%, 0 94%, 0 0);
+    z-index: -1;
+    transform: scale(1.005);
+}
+
+button {
+    font-family: "Satoshi-Medium";
+    font-size: 1.5rem;
+    background: var(--button-background);
 }
