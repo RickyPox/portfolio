@@ -34,5 +34,9 @@
             }
         ],
         "button": "Get in Touch"
+    },
+    "tech": {
+        "title": "Tech Stacks",
+        "info": "Those are the technologies that I use the most"
     }
 }

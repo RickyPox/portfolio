@@ -4,16 +4,20 @@
 
 :root {
     --background: #0a090f;
+    --secondary-background: #15151a;
     --main-text-color: #efefe6;
     --hightlight-text: #fff000;
+    --border-color: #424143;
     --button-background: linear-gradient(to right, #fff000, #ffd54f);
 }
 
 @theme inline {
     --color-background: var(--background);
+    --color-secondary-background: var(--secondary-background);
     --color-main-text: var(--main-text-color);
     --color-hightlight-text: var(--hightlight-text);
     --color-button-background: var(--button-background);
+    --color-border-color: var(--border-color);
 }
 
 html {
@@ -37,6 +41,18 @@ h2 {
     color: var(--main-text-color);
     line-height: 76px;
     letter-spacing: -5px;
+}
+
+h3 {
+    font-size: 3rem;
+    font-family: "Satoshi-Black";
+    color: var(--main-text-color);
+}
+
+h4 {
+    font-size: 1rem;
+    font-family: "Satoshi-Black";
+    color: var(--main-text-color);
 }
 
 p {
@@ -87,4 +103,14 @@ button {
     font-family: "Satoshi-Medium";
     font-size: 1.5rem;
     background: var(--button-background);
+}
+
+.tech-card {
+    background-color: var(--secondary-background);
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px var(--border-color);
 }
