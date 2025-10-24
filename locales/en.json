@@ -38,5 +38,27 @@
     "tech": {
         "title": "Tech Stacks",
         "info": "Those are the technologies that I use the most"
+    },
+    "projects": {
+        "title": "Projects",
+        "project": [
+            {
+                "title": "Title",
+                "description": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
+                "button": "Watch Live"
+            }
+        ]
+    },
+    "contact": {
+        "title": [
+            { "text": "Get In", "highlight": false },
+            { "text": " Touch", "highlight": true }
+        ],
+        "info": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
+        "form_name": "Your Name",
+        "form_email": "Your Email",
+        "form_subject": "Subject",
+        "form_message": "Write your message",
+        "button": "Send"
     }
 }

@@ -2,18 +2,18 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function TechStacks() {
     const techs = [
-        { name: "Html 5", img: "" },
-        { name: "Css", img: "" },
-        { name: "Javascript", img: "" },
-        { name: "Typescript", img: "" },
-        { name: "React", img: "" },
-        { name: "Nextjs", img: "" },
-        { name: "Tailwindcss", img: "" },
-        { name: "Gsap", img: "" },
-        { name: "Supabase", img: "" },
-        { name: "APIs", img: "" },
-        { name: "Vercel", img: "" },
-        { name: "Github", img: "" },
+        { name: "Html 5", img: "/" },
+        { name: "Css", img: "/" },
+        { name: "Javascript", img: "/" },
+        { name: "Typescript", img: "/" },
+        { name: "React", img: "/" },
+        { name: "Nextjs", img: "/" },
+        { name: "Tailwindcss", img: "/" },
+        { name: "Gsap", img: "/" },
+        { name: "Supabase", img: "/" },
+        { name: "APIs", img: "/" },
+        { name: "Vercel", img: "/" },
+        { name: "Github", img: "/" },
     ];
 
     const dict = useLanguage();
@@ -27,7 +27,7 @@ export default function TechStacks() {
                 {techs.map((tech, i) => (
                     <div key={i} className=" col-span-1 tech-card">
                         <img alt={tech.name} src={tech.img} />
-                        <h4>{tech.name}</h4>
+                        <h5>{tech.name}</h5>
                     </div>
                 ))}
                 <div className="col-start-1 col-span-full flex gap-x-[20px] justify-end items-center">
