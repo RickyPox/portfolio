@@ -29,18 +29,18 @@ body {
 }
 
 h1 {
-    font-size: 15.625rem;
+    font-size: 3.5rem;
     font-family: "Satoshi-Black";
     color: var(--main-text-color);
-    letter-spacing: -20px;
+    letter-spacing: -5px;
 }
 
 h2 {
-    font-size: 6rem;
+    font-size: 2rem;
     font-family: "Satoshi-Black";
     color: var(--main-text-color);
-    line-height: 76px;
-    letter-spacing: -5px;
+    line-height: 25px;
+    letter-spacing: -2px;
 }
 
 h3 {
@@ -63,7 +63,7 @@ h5 {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-family: "ClashDisplay-ExtraLight";
     color: var(--main-text-color);
 }
@@ -71,19 +71,57 @@ p.bold {
     font-family: "ClashDisplay-Bold";
 }
 
-.text-highlight {
-    color: var(--hightlight-text) !important;
+h1.line-spacing {
+    line-height: 50px;
 }
 
+@media (width >= 1920px) {
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 20px;
+        padding: 0px 75px;
+    }
+    h1 {
+        font-size: 15.625rem;
+        letter-spacing: -20px;
+    }
+
+    h2 {
+        font-size: 6rem;
+        line-height: 76px;
+        letter-spacing: -5px;
+    }
+
+    h3 {
+        font-size: 3rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    h1.line-spacing {
+        line-height: 210px;
+    }
+}
 .main-grid {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 20px;
-    padding: 0px 75px;
+    padding: 0px 20px;
 }
 
-h1.line-spacing {
-    line-height: 210px;
+.text-highlight {
+    color: var(--hightlight-text) !important;
 }
 
 .clip-mask {
@@ -128,7 +166,6 @@ button {
     border: solid 1px var(--border-color);
     display: flex;
     gap: 0px 30px;
-    padding: 120px 20px;
 }
 
 input {

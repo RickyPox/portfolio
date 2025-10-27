@@ -14,7 +14,7 @@ export default function Home() {
             <Hero></Hero>
             <GetToKnow></GetToKnow>
             <TechStacks></TechStacks>
-            <section className="mt-[200px]">
+            <section className="lg:mt-[200px] mt-[100px]">
                 <Projects></Projects>
             </section>
             <Contacts></Contacts>

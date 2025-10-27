@@ -19,18 +19,19 @@ export default function TechStacks() {
     const dict = useLanguage();
     return (
         <div className="main-grid">
-            <div className="col-start-2 col-span-6 grid grid-cols-6 gap-[20px]">
-                <div className="col-start-1 col-span-full flex gap-x-[20px]">
-                    <h3>/////////////////////////////////////</h3>
+            <div className="col-start-1 col-span-full lg:col-start-2 lg:col-span-6 grid lg:grid-cols-6 grid-cols-8 gap-[20px]">
+                <div className="col-start-1 col-span-full lg:flex gap-x-[20px]">
+                    <h3 className="lg:block hidden">/////////////////////////////////////</h3>
                     <h3>{dict.tech.title}</h3>
+                    <p className="block lg:hidden">{dict.tech.info}</p>
                 </div>
                 {techs.map((tech, i) => (
-                    <div key={i} className=" col-span-1 tech-card">
+                    <div key={i} className=" lg:col-span-1 col-span-4 tech-card">
                         <img alt={tech.name} src={tech.img} />
                         <h5>{tech.name}</h5>
                     </div>
                 ))}
-                <div className="col-start-1 col-span-full flex gap-x-[20px] justify-end items-center">
+                <div className="col-start-1 col-span-full lg:flex hidden gap-x-[20px] justify-end items-center">
                     <p>{dict.tech.info}</p>
                     <h3>/////////////////////////////////////</h3>
                 </div>
