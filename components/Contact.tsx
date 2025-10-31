@@ -5,7 +5,7 @@ export default function Contacts() {
     const dict = useLanguage();
     return (
         <div className="main-grid">
-            <div className="col-start-1 col-span-full lg:col-start-2 lg:col-span-6">
+            <div className="col-start-1 col-span-full 2xl:col-start-2 2xl:col-span-6">
                 <h1 className="uppercase line-spacing">
                     {dict.contact.title.map((phrase: any, i: any) => (
                         <span key={i} className={`${phrase.highlight ? "text-highlight" : ""}`}>
@@ -28,8 +28,10 @@ export default function Contacts() {
                     <div className="w-full">
                         <textarea className="w-full h-[300px] p-[20px]" placeholder={dict.contact.form_message} />
                     </div>
-                    <div className="lg:w-1/6">
-                        <Button href="#" text={dict.contact.button} />
+                    <div className="grid lg:grid-cols-8 gap-x-[20px]">
+                        <div className="col-span-2">
+                            <Button href="#" text={dict.contact.button} />
+                        </div>
                     </div>
                 </div>
             </div>

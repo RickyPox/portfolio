@@ -40,13 +40,18 @@ export default function Hero() {
         []; */
 
     return (
-        <div className="lg:h-screen">
+        <div className="h-screen flex items-center">
             <div className="main-grid">
-                <div className="col-start-1 col-span-full lg:col-start-2 lg:col-span-5">
-                    <h1 ref={textToSplitRef}>{dict.home.front}</h1>
-                    <h1 className="text-highlight -mt-[11.5vw] -ml-[2px]">{dict.home.dev}</h1>
+                <div className="col-start-1 col-span-full lg:col-start-1 lg:col-span-6 2xl:col-start-2 2xl:col-span-6">
+                    <h1>
+                        {dict.home.title.map((phrase: any, i: any) => (
+                            <span key={i} className={`${phrase.highlight ? "text-highlight " : ""}`}>
+                                {phrase.text}{" "}
+                            </span>
+                        ))}
+                    </h1>
                 </div>
-                <div className="col-start-1 col-span-full lg:col-start-2 lg:col-span-5 -mt-[3vw]">
+                <div className="col-start-1 col-span-full lg:col-start-1 lg:col-span-6 2xl:col-start-2 2xl:col-span-6">
                     <h2>
                         {dict.home.subtitle.map((phrase: any, i: any) => (
                             <span key={i} className={`${phrase.highlight ? "text-highlight" : ""}`}>

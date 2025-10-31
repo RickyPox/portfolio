@@ -29,22 +29,23 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-family: "Satoshi-Black";
     color: var(--main-text-color);
-    letter-spacing: -5px;
+    letter-spacing: calc(7rem * -0.08);
+    line-height: 50px;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: "Satoshi-Black";
     color: var(--main-text-color);
-    line-height: 25px;
+    line-height: 30px;
     letter-spacing: -2px;
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: "Satoshi-Black";
     color: var(--main-text-color);
     text-transform: uppercase;
@@ -71,11 +72,85 @@ p.bold {
     font-family: "ClashDisplay-Bold";
 }
 
-h1.line-spacing {
-    line-height: 50px;
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 20px;
+    padding: 0px 20px;
 }
 
-@media (width >= 1920px) {
+/* ====== BREAKPOINT 768px ====== */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 9rem;
+        letter-spacing: calc(9rem * -0.08);
+        line-height: 100px;
+    }
+    h2 {
+        font-size: 2.2rem;
+        line-height: 32px;
+        letter-spacing: -1.5px;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 20px;
+        padding: 0px 80px;
+    }
+}
+
+/* ====== BREAKPOINT 1024px ====== */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 8.5rem;
+        letter-spacing: calc(8.5rem * -0.08);
+        line-height: 100px;
+    }
+    h2 {
+        font-size: 3rem;
+        line-height: 38px;
+        letter-spacing: -2px;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 20px;
+        padding: 0px 100px;
+    }
+}
+
+/* ====== BREAKPOINT 1280px ====== */
+@media (min-width: 1280px) {
+    h1 {
+        font-size: 11rem;
+        letter-spacing: calc(11rem * -0.08);
+        line-height: 130px;
+    }
+    h2 {
+        font-size: 4rem;
+        line-height: 46px;
+        letter-spacing: -3px;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 20px;
+        padding: 0px 150px;
+    }
+}
+
+/* ====== BREAKPOINT 1536px ====== */
+@media (min-width: 1536px) {
     .main-grid {
         display: grid;
         grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -83,8 +158,25 @@ h1.line-spacing {
         padding: 0px 75px;
     }
     h1 {
+        font-size: 13rem;
+        letter-spacing: calc(13rem * -0.08);
+        line-height: 160px;
+    }
+    h2 {
+        font-size: 5rem;
+        line-height: 60px;
+        letter-spacing: -4px;
+    }
+    h3 {
+        font-size: 3rem;
+    }
+}
+/* ====== BREAKPOINT 1920px ====== */
+@media (min-width: 1920px) {
+    h1 {
         font-size: 15.625rem;
-        letter-spacing: -20px;
+        letter-spacing: calc(15.625rem * -0.08);
+        line-height: 195px;
     }
 
     h2 {
@@ -92,32 +184,9 @@ h1.line-spacing {
         line-height: 76px;
         letter-spacing: -5px;
     }
-
     h3 {
         font-size: 3rem;
     }
-
-    h4 {
-        font-size: 2rem;
-    }
-
-    h5 {
-        font-size: 1rem;
-    }
-
-    p {
-        font-size: 1.5rem;
-    }
-
-    h1.line-spacing {
-        line-height: 210px;
-    }
-}
-.main-grid {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 20px;
-    padding: 0px 20px;
 }
 
 .text-highlight {
@@ -130,11 +199,10 @@ h1.line-spacing {
 
 .image-container {
     position: relative;
-    isolation: isolate; /* garante que o pseudo-elemento não escape do container */
+    isolation: isolate;
 }
 
 .image-container::before {
-    max-height: 600px;
     content: "";
     position: absolute;
     inset: 0;
@@ -153,7 +221,6 @@ button {
 .tech-card {
     background-color: var(--secondary-background);
     padding: 20px 0px;
-    display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -164,8 +231,6 @@ button {
     background-color: var(--secondary-background);
     border-radius: 10px;
     border: solid 1px var(--border-color);
-    display: flex;
-    gap: 0px 30px;
 }
 
 input {

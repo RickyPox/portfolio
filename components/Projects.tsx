@@ -7,20 +7,26 @@ export default function Projects() {
     return (
         <div className="main-grid bg-secondary-background rounded-[10px] relative">
             <h1 className="uppercase absolute w-full text-center top-[3%]">{dict.projects.title}</h1>
-            <div className="col-start-1 col-span-full lg:col-start-2 lg:col-span-6 relative lg:pt-[250px] pt-[150px] pb-[150px]">
-                <div className="project-wrapper w-full flex lg:flex-row flex-col lg:py-[120px] py-[20px] px-[20px]">
-                    <img src="/Img.png"></img>
-                    {dict.projects.project.map((p: any, i: any) => (
-                        <div key={i}>
-                            <div className="lg:w-3/4 flex flex-col gap-y-[30px] lg:mt-0 mt-[50px]">
-                                <h4>{p.title}</h4>
-                                <p>{p.description}</p>
-                                <div className="lg:w-1/3">
-                                    <Button href="#" text={p.button} />
+            <div className="col-start-1 col-span-full 2xl:col-start-2 2xl:col-span-6 lg:pt-[250px] pt-[150px] pb-[150px]">
+                <div className="project-wrapper w-full lg:grid lg:grid-cols-8 gap-x-[20px] py-[50px]">
+                    <div className="lg:col-span-4 pl-[20px] flex">
+                        <img className="w-full object-cover" src="/Img.png"></img>
+                    </div>
+                    <div className="lg:col-span-4 ">
+                        {dict.projects.project.map((p: any, i: any) => (
+                            <div key={i} className=" flex flex-col lg:mt-0 mt-[50px] h-full justify-between">
+                                <div className="flex flex-col gap-y-[30px]">
+                                    <h4 className="pr-[20px]">{p.title}</h4>
+                                    <p className="pr-[20px]">{p.description}</p>
+                                </div>
+                                <div className="grid grid-cols-4 gap-x-[20px]">
+                                    <div className="col-span-2">
+                                        <Button href="#" text={p.button} />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

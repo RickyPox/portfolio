@@ -4,8 +4,14 @@
         "description": "A simple and SEO-friendly multilingual website built with Next.js."
     },
     "home": {
-        "front": "Front-end",
-        "dev": "Developer",
+        "title": [
+            {
+                "text": "Front-end",
+                "highlight": false
+            },
+            { "text": "Developer", "highlight": true }
+        ],
+
         "subtitle": [
             { "text": "Crafting digital experiences with", "highlight": false },
             { "text": " vision", "highlight": true },

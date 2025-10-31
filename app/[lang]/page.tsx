@@ -12,7 +12,9 @@ export default function Home() {
     return (
         <div>
             <Hero></Hero>
-            <GetToKnow></GetToKnow>
+            <section className="lg:mt-[200px] mt-[100px]">
+                <GetToKnow></GetToKnow>
+            </section>
             <TechStacks></TechStacks>
             <section className="lg:mt-[200px] mt-[100px]">
                 <Projects></Projects>
