@@ -2,18 +2,18 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export default function TechStacks() {
     const techs = [
-        { name: "Html 5", img: "/" },
-        { name: "Css", img: "/" },
-        { name: "Javascript", img: "/" },
-        { name: "Typescript", img: "/" },
-        { name: "React", img: "/" },
-        { name: "Nextjs", img: "/" },
-        { name: "Tailwindcss", img: "/" },
-        { name: "Gsap", img: "/" },
-        { name: "Supabase", img: "/" },
-        { name: "APIs", img: "/" },
-        { name: "Vercel", img: "/" },
-        { name: "Github", img: "/" },
+        { name: "Html 5", img: "/techs/Html.png" },
+        { name: "Css", img: "/techs/Css.png" },
+        { name: "Javascript", img: "/techs/Javascript.png" },
+        { name: "Typescript", img: "/techs/Typescript.png" },
+        { name: "React", img: "/techs/React.png" },
+        { name: "Nextjs", img: "/techs/Next.png" },
+        { name: "Tailwind", img: "/techs/Tailwind.png" },
+        { name: "Gsap", img: "/techs/Gsap.png" },
+        { name: "Supabase", img: "/techs/Supabase.png" },
+        { name: "Figma", img: "/techs/Figma.png" },
+        { name: "Vercel", img: "/techs/Vercel.png" },
+        { name: "Github", img: "/techs/Github.png" },
     ];
 
     const dict = useLanguage();
@@ -26,8 +26,8 @@ export default function TechStacks() {
                     <p className="block lg:hidden">{dict.tech.info}</p>
                 </div>
                 {techs.map((tech, i) => (
-                    <div key={i} className=" lg:col-span-1 col-span-4 tech-card flex md:flex-row flex-col">
-                        <img alt={tech.name} src={tech.img} />
+                    <div key={i} className=" lg:col-span-1 col-span-4 tech-card flex flex-col gap-[20px]">
+                        <img className="max-w-[70px] max-h-[50px]" alt={tech.name} src={tech.img} />
                         <h5>{tech.name}</h5>
                     </div>
                 ))}

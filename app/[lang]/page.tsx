@@ -15,11 +15,15 @@ export default function Home() {
             <section className="lg:mt-[200px] mt-[100px]">
                 <GetToKnow></GetToKnow>
             </section>
-            <TechStacks></TechStacks>
+            <section className="lg:mt-[200px] mt-[100px]">
+                <TechStacks></TechStacks>
+            </section>
             <section className="lg:mt-[200px] mt-[100px]">
                 <Projects></Projects>
             </section>
-            <Contacts></Contacts>
+            <section className="lg:mt-[200px] mt-[100px]">
+                <Contacts></Contacts>
+            </section>
         </div>
     );
 }
