@@ -4,67 +4,7 @@
         "description": "A simple and SEO-friendly multilingual website built with Next.js."
     },
     "home": {
-        "title": [
-            {
-                "text": "Front-end",
-                "highlight": false
-            },
-            { "text": "Developer", "highlight": true }
-        ],
-
-        "subtitle": [
-            { "text": "Crafting digital experiences with", "highlight": false },
-            { "text": " vision", "highlight": true },
-            { "text": " and", "highlight": false },
-            { "text": " precision.", "highlight": true }
-        ]
-    },
-    "about": {
-        "title": [
-            { "text": "Get To", "highlight": false },
-            { "text": " Know", "highlight": true },
-            { "text": " Me", "highlight": false }
-        ],
-        "info": [
-            {
-                "text": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
-                "bold": false
-            },
-            {
-                "text": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
-                "bold": false
-            },
-            {
-                "text": "Tortor integer nibh netus etiam mauris.",
-                "bold": true
-            }
-        ],
-        "button": "Get in Touch"
-    },
-    "tech": {
-        "title": "Tech Stacks",
-        "info": "Those are the technologies that I use the most"
-    },
-    "projects": {
-        "title": "Projects",
-        "project": [
-            {
-                "title": "Title",
-                "description": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
-                "button": "Watch Live"
-            }
-        ]
-    },
-    "contact": {
-        "title": [
-            { "text": "Get In", "highlight": false },
-            { "text": " Touch", "highlight": true }
-        ],
-        "info": "Lorem ipsum dolor sit amet consectetur. Viverra mollis tellus praesent lacus aliquam praesent amet at at. Scelerisque neque at habitant convallis. Magnis bibendum fames tempor laoreet pharetra mauris amet vestibulum. Tortor integer nibh netus etiam mauris.",
-        "form_name": "Your Name",
-        "form_email": "Your Email",
-        "form_subject": "Subject",
-        "form_message": "Write your message",
-        "button": "Send"
+        "title": ["Front-end", "Developer"],
+        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu."
     }
 }

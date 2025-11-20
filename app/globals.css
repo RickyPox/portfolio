@@ -1,23 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&family=Stint+Ultra+Condensed&display=swap");
 @import "tailwindcss";
+
 @import "./satoshi.css";
-@import "./clash-display.css";
 
 :root {
-    --background: #0a090f;
-    --secondary-background: #15151a;
-    --main-text-color: #efefe6;
-    --hightlight-text: #fff000;
-    --border-color: #424143;
-    --button-background: linear-gradient(to right, #fff000, #ffd54f);
+    --main-color: #ffffff;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-secondary-background: var(--secondary-background);
-    --color-main-text: var(--main-text-color);
-    --color-hightlight-text: var(--hightlight-text);
-    --color-button-background: var(--button-background);
-    --color-border-color: var(--border-color);
+    --color-main-color: var(--main-color);
 }
 
 html {
@@ -25,240 +16,52 @@ html {
 }
 
 body {
-    background: var(--background);
+    color: var(--main-color);
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
 }
 
 h1 {
-    font-size: 4rem;
-    font-family: "Satoshi-Black";
-    color: var(--main-text-color);
-    letter-spacing: calc(7rem * -0.08);
-    line-height: 50px;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-family: "Satoshi-Black";
-    color: var(--main-text-color);
-    line-height: 30px;
-    letter-spacing: -2px;
-}
-
-h3 {
-    font-size: 2.5rem;
-    font-family: "Satoshi-Black";
-    color: var(--main-text-color);
-    text-transform: uppercase;
-}
-
-h4 {
-    font-size: 2rem;
-    font-family: "ClashDisplay-Bold";
-    color: var(--main-text-color);
-}
-
-h5 {
-    font-size: 1rem;
-    font-family: "Satoshi-Black";
-    color: var(--main-text-color);
-}
-
-p {
-    font-size: 1rem;
-    font-family: "ClashDisplay-ExtraLight";
-    color: var(--main-text-color);
-}
-p.bold {
-    font-family: "ClashDisplay-Bold";
-}
-
-.main-grid {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 20px;
-    padding: 0px 20px;
-}
-
-/* ====== BREAKPOINT 768px ====== */
-@media (min-width: 768px) {
-    h1 {
-        font-size: 9rem;
-        letter-spacing: calc(9rem * -0.08);
-        line-height: 100px;
-    }
-    h2 {
-        font-size: 2.2rem;
-        line-height: 32px;
-        letter-spacing: -1.5px;
-    }
-    h3 {
-        font-size: 3rem;
-    }
-
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(8, minmax(0, 1fr));
-        gap: 20px;
-        padding: 0px 80px;
-    }
-}
-
-/* ====== BREAKPOINT 1024px ====== */
-@media (min-width: 1024px) {
-    h1 {
-        font-size: 8.5rem;
-        letter-spacing: calc(8.5rem * -0.08);
-        line-height: 100px;
-    }
-    h2 {
-        font-size: 3rem;
-        line-height: 38px;
-        letter-spacing: -2px;
-    }
-    h3 {
-        font-size: 3rem;
-    }
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(8, minmax(0, 1fr));
-        gap: 20px;
-        padding: 0px 100px;
-    }
-}
-
-/* ====== BREAKPOINT 1280px ====== */
-@media (min-width: 1280px) {
-    h1 {
-        font-size: 11rem;
-        letter-spacing: calc(11rem * -0.08);
-        line-height: 130px;
-    }
-    h2 {
-        font-size: 4rem;
-        line-height: 46px;
-        letter-spacing: -3px;
-    }
-    h3 {
-        font-size: 3rem;
-    }
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(8, minmax(0, 1fr));
-        gap: 20px;
-        padding: 0px 150px;
-    }
-}
-
-/* ====== BREAKPOINT 1536px ====== */
-@media (min-width: 1536px) {
-    .main-grid {
-        display: grid;
-        grid-template-columns: repeat(8, minmax(0, 1fr));
-        gap: 20px;
-        padding: 0px 75px;
-    }
-    h1 {
-        font-size: 13rem;
-        letter-spacing: calc(13rem * -0.08);
-        line-height: 160px;
-    }
-    h2 {
-        font-size: 5rem;
-        line-height: 60px;
-        letter-spacing: -4px;
-    }
-    h3 {
-        font-size: 3rem;
-    }
-}
-/* ====== BREAKPOINT 1920px ====== */
-@media (min-width: 1920px) {
-    h1 {
-        font-size: 15.625rem;
-        letter-spacing: calc(15.625rem * -0.08);
-        line-height: 195px;
-    }
-
-    h2 {
-        font-size: 6rem;
-        line-height: 76px;
-        letter-spacing: -5px;
-    }
-    h3 {
-        font-size: 3rem;
-    }
-}
-
-.text-highlight {
-    color: var(--hightlight-text) !important;
-}
-
-.clip-mask {
-    clip-path: polygon(99% 0, 99% 6%, 100% 7%, 100% 100%, 6% 100%, 0 94%, 0 0);
-}
-
-.image-container {
-    position: relative;
-    isolation: isolate;
-}
-
-.image-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--color-main-text); /* cor do contorno */
-    clip-path: polygon(99% 0, 99% 6%, 100% 7%, 100% 100%, 6% 100%, 0 94%, 0 0);
-    z-index: -1;
-    transform: scale(1.005);
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 150px;
+    line-height: 109px;
 }
 
 button {
-    font-family: "Satoshi-Medium";
-    font-size: 1.5rem;
-    background: var(--button-background);
+    font-family: "Stint Ultra Condensed", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    padding: 15px 25px;
+    border: solid 2px var(--main-color);
+    text-transform: uppercase;
 }
 
-.tech-card {
-    background-color: var(--secondary-background);
-    padding: 20px 0px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    border: solid 1px var(--border-color);
+p {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 30px;
 }
 
-.project-wrapper {
-    background-color: var(--secondary-background);
-    border-radius: 10px;
-    border: solid 1px var(--border-color);
+section {
+    width: 100vw;
+    height: 100vh;
 }
 
-input {
-    background-color: var(--secondary-background);
-    border-radius: 10px;
-    border: solid 1px var(--border-color);
-    padding: 20px;
-    font-family: "Satoshi-Medium";
-    font-size: 1rem;
-    color: var(--main-text-color);
+section .home {
+    background-image: url("/Landing.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: var(--main-text-color);
-}
-
-textarea {
-    background-color: var(--secondary-background);
-    border-radius: 10px;
-    border: solid 1px var(--border-color);
-    font-size: 1rem;
-    font-family: "ClashDisplay-ExtraLight";
-    color: var(--main-text-color);
-    resize: none;
-}
-
-input:focus,
-textarea:focus {
-    outline: none;
+.content-container {
+    display: flex;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
 }

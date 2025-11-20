@@ -1,9 +1,6 @@
 "use client";
-import Contacts from "@/components/Contact";
-import GetToKnow from "@/components/GetToKnow";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import TechStacks from "@/components/TechStacks";
+
+import Landing from "@/components/Landing";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
@@ -11,18 +8,8 @@ export default function Home() {
 
     return (
         <div>
-            <Hero></Hero>
-            <section className="lg:mt-[200px] mt-[100px]">
-                <GetToKnow></GetToKnow>
-            </section>
-            <section className="lg:mt-[200px] mt-[100px]">
-                <TechStacks></TechStacks>
-            </section>
-            <section className="lg:mt-[200px] mt-[100px]">
-                <Projects></Projects>
-            </section>
-            <section className="lg:mt-[200px] mt-[100px]">
-                <Contacts></Contacts>
+            <section>
+                <Landing />
             </section>
         </div>
     );

@@ -1,10 +1,11 @@
+import Link from "next/link";
 import React from "react";
 
-export default function Button({ text, href }: any) {
+export default function Button({ title, href }: any) {
     return (
         <div>
-            <button className="w-full py-[25px] rounded-[10px]">
-                <a href={href}>{text}</a>
+            <button>
+                <Link href={href}>{title}</Link>
             </button>
         </div>
     );
