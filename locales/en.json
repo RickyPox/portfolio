@@ -5,6 +5,20 @@
     },
     "home": {
         "title": ["Front-end", "Developer"],
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu."
+        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
+        "button": "Get in Touch"
+    },
+    "about": {
+        "title": "Get to Know me",
+        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu."
+    },
+    "projects": {
+        "title": "Things i've Made",
+        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
+        "button": "Explore More"
+    },
+    "contacts": {
+        "title": "Get In Touch",
+        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu."
     }
 }

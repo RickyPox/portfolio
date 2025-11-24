@@ -29,6 +29,12 @@ h1 {
     line-height: 109px;
 }
 
+h2 {
+    font-family: "Stint Ultra Condensed", serif;
+    font-weight: 400;
+    font-size: 48px;
+}
+
 button {
     font-family: "Stint Ultra Condensed", serif;
     font-weight: 400;
@@ -47,7 +53,6 @@ p {
 }
 
 section {
-    width: 100vw;
     height: 100vh;
 }
 
@@ -59,6 +64,29 @@ section .home {
     background-position: center center;
 }
 
+section .about {
+    background-image: url("/About.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+section .projects {
+    background-image: url("/Projects.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+section .contacts {
+    background-image: url("/Chair.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
 .content-container {
     display: flex;
     padding: 40px;
