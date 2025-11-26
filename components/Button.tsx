@@ -18,8 +18,8 @@ export default function Button({ title, href }: any) {
     return (
         <div>
             <Link href={href} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <button className="relative z-10 cursor-pointer">
-                    <div ref={bgRef} className="absolute left-0 top-0 h-full w-0 bg-[var(--secondary-color)] -z-10" />
+                <button className="relative z-10 cursor-pointer px-[15px] py-[10px] md:px-[25] md:py-[15px]">
+                    <div ref={bgRef} className="absolute left-0 top-0 h-full w-0 bg-[var(--secondary-color)] -z-10 " />
                     {title}
                 </button>
             </Link>
