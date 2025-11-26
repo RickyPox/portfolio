@@ -5,10 +5,12 @@
 
 :root {
     --main-color: #ffffff;
+    --secondary-color: #000511;
 }
 
 @theme inline {
     --color-main-color: var(--main-color);
+    --color-secondary-color: var(--secondary-color);
 }
 
 html {
@@ -25,21 +27,21 @@ h1 {
     font-family: "Staatliches", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 150px;
-    line-height: 109px;
+    font-size: 7vw;
+    line-height: 5.5vw;
 }
 
 h2 {
     font-family: "Stint Ultra Condensed", serif;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 2.5vw;
 }
 
 button {
     font-family: "Stint Ultra Condensed", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 48px;
+    font-size: 2.5vw;
     padding: 15px 25px;
     border: solid 2px var(--main-color);
     text-transform: uppercase;
@@ -48,8 +50,25 @@ button {
 p {
     font-family: "Satoshi", sans-serif;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 30px;
+    font-size: 1.6vw;
+    line-height: 1.7vw;
+}
+
+@media (width <= 768px) {
+    p {
+        font-size: 3vw;
+        line-height: 3vw;
+    }
+    h1 {
+        font-size: 10.5vw;
+        line-height: 8.6vw;
+    }
+    h2 {
+        font-size: 4vw;
+    }
+    button {
+        font-size: 4vw;
+    }
 }
 
 section {
