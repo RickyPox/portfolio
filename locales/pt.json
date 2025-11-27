@@ -1,4 +1,6 @@
 {
+    "lang": "pt",
+
     "meta": {
         "title": "Welcome to my multilingual website",
         "description": "A simple and SEO-friendly multilingual website built with Next.js."

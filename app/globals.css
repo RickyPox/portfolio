@@ -12,11 +12,6 @@
     --p-font-size: 4vw;
 }
 
-@theme inline {
-    --color-main-color: var(--main-color);
-    --color-secondary-color: var(--secondary-color);
-}
-
 html {
     font-size: 16px;
 }

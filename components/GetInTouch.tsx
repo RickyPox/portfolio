@@ -16,8 +16,8 @@ export default function GetInTouch() {
                     <div className="lg:w-1/2">
                         <p>{dict.contacts.socials}</p>
                         <div className="flex gap-x-[30px] lg:mt-[50px] mt-[30px]">
-                            <p className="text-[24px] font-[Staatliches]!">GitHub</p>
-                            <p className="text-[24px] font-[Staatliches]!">Instagram</p>
+                            <p className="font-[Staatliches]!">GitHub</p>
+                            <p className="font-[Staatliches]!">Instagram</p>
                         </div>
                     </div>
                 </div>

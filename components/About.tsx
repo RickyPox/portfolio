@@ -9,6 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
     const dict = useLanguage();
+
+    console.log("useLanguage devolve:", dict);
+
     const containerRef = useRef(null);
     const imageRef = useRef(null);
 
