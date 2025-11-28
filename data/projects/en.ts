@@ -3,7 +3,7 @@ export const projectsEn = [
         id: 1,
         title: "Zira Houses",
         description: "A real estate website for Zira Houses, showcasing properties with detailed information and images.",
-        imageUrl: "/projects/zira_houses.png",
+        imageUrl: "/projects/ZiraHouses.png",
         projectUrl: "https://zirahouses.com",
         date: "2025",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Figma", "Vercel"],

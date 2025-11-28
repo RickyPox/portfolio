@@ -24,5 +24,8 @@
         "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
         "socials": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien.",
         "button": "Let's Make it Real"
-    }
+    },
+
+    "projectError": "Project Not Found.",
+    "return": "Return"
 }

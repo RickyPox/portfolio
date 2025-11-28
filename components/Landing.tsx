@@ -22,7 +22,7 @@ const Landing = () => {
                 </div>
                 <div className="2xl:w-1/3 md:w-1/2 flex flex-col gap-y-[40px]">
                     <p>{dict.home.description}</p>
-                    <Button title={dict.home.button} href="#"></Button>
+                    <Button title={dict.home.button} href="https://www.youtube.com/watch?v=TJxA6-cQJTE&t=1240s"></Button>
                 </div>
             </div>
         </div>

@@ -1,19 +1,17 @@
 "use client";
+import ProjectInfo from "@/components/Project_Info";
 import { useLanguage } from "@/context/LanguageContext";
 import { projectsByLang } from "@/data/projects/index";
 import gsap from "gsap";
-import { title } from "process";
 import { useEffect, useRef, useState } from "react";
 
 export default function ProjectsPage() {
     const dict = useLanguage();
-
     const titleRef = useRef<HTMLParagraphElement | null>(null);
-
     const projects = projectsByLang[dict.lang as keyof typeof projectsByLang] || projectsByLang["en"];
-
     const [hovered, setHovered] = useState<{ id: number; x: number; y: number } | null>(null);
-    const [prevHoveredId, setPrevHoveredId] = useState<number | null>(null);
+    const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
+    const [isProjectOpen, setIsProjectOpen] = useState<boolean>(false);
 
     const handleMouseEnter = (id: number, e: React.MouseEvent<HTMLDivElement>) => {
         setHovered({ id, x: e.clientX, y: e.clientY });
@@ -32,8 +30,6 @@ export default function ProjectsPage() {
 
     const handleMouseLeave = (id: number) => {
         const leavingId = id;
-
-        setPrevHoveredId(leavingId);
 
         gsap.to(titleRef.current, {
             opacity: 0,
@@ -57,40 +53,52 @@ export default function ProjectsPage() {
 
     return (
         <div className="relative">
-            <img src="/Projects.jpg" className="w-screen h-screen fixed -z-10"></img>
-            <div className="content-container flex-col gap-y-[40px]">
-                <h1>{dict.projects.title}</h1>
-                <div className="grid grid-cols-4 gap-[20px]">
-                    {projects.map((project) => (
-                        <div
-                            key={project.id}
-                            className="col-span-1 aspect-video"
-                            onMouseEnter={(e) => handleMouseEnter(project.id, e)}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={() => handleMouseLeave(project.id)}
-                            style={{ cursor: hovered?.id === project.id ? "none" : "default" }}
-                        >
-                            <div className="bg-amber-50 w-full h-full" />
-                            {hovered?.id === project.id && (
-                                <p
-                                    ref={titleRef}
-                                    className="absolute font-[Staatliches]! pointer-events-none "
-                                    style={{
-                                        left: hovered.x,
-                                        top: hovered.y,
-                                        transform: "translate(-50%, -50%)",
-                                        backgroundColor: "var(--secondary-color)",
-
-                                        padding: "10px",
-                                    }}
+            {selectedProjectId !== null && (
+                <ProjectInfo
+                    id={selectedProjectId}
+                    onClose={() => setSelectedProjectId(null)}
+                    backgroundRenderChange={() => setIsProjectOpen(!isProjectOpen)}
+                />
+            )}
+            {isProjectOpen === false && (
+                <div className="relative">
+                    <img src="/Projects.jpg" className="w-screen h-screen fixed -z-10"></img>
+                    <div className="content-container flex-col gap-y-[40px]">
+                        <h1>{dict.projects.title}</h1>
+                        <div className="grid grid-cols-4 gap-[20px]">
+                            {projects.map((project) => (
+                                <div
+                                    key={project.id}
+                                    className="col-span-1 aspect-video"
+                                    onMouseEnter={(e) => handleMouseEnter(project.id, e)}
+                                    onMouseMove={handleMouseMove}
+                                    onMouseLeave={() => handleMouseLeave(project.id)}
+                                    style={{ cursor: hovered?.id === project.id ? "none" : "default" }}
+                                    onClick={() => setSelectedProjectId(project.id)}
                                 >
-                                    {project.title}
-                                </p>
-                            )}
+                                    <div className="bg-amber-50 w-full h-full" />
+                                    {hovered?.id === project.id && selectedProjectId === null && (
+                                        <p
+                                            ref={titleRef}
+                                            className="absolute font-[Staatliches]! pointer-events-none "
+                                            style={{
+                                                left: hovered.x,
+                                                top: hovered.y,
+                                                transform: "translate(-50%, -50%)",
+                                                backgroundColor: "var(--secondary-color)",
+
+                                                padding: "10px",
+                                            }}
+                                        >
+                                            {project.title}
+                                        </p>
+                                    )}
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 }

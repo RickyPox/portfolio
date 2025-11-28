@@ -1,28 +1,43 @@
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Link from "next/link";
 import React, { useRef, useState } from "react";
 
-export default function Button({ title, href }: any) {
-    const [isHovered, setIsHovered] = useState(false);
+export default function Button({ title, href }: { title: string; href?: string }) {
     const bgRef = useRef<HTMLDivElement | null>(null);
 
-    useGSAP(() => {
+    const handleButtonEnter = () => {
         gsap.to(bgRef.current, {
-            width: isHovered ? "100%" : "0%",
+            width: "100%",
             duration: 0.3,
             ease: "power2.out",
         });
-    }, [isHovered]);
+        gsap.to(".button", {
+            color: "var(--secondary-color)",
+            duration: 0.3,
+            ease: "power2.out",
+        });
+    };
+
+    const handleButtonLeave = () => {
+        gsap.to(bgRef.current, {
+            width: "0%",
+            duration: 0.3,
+            ease: "power2.out",
+        });
+        gsap.to(".button", {
+            color: "white",
+            duration: 0.3,
+            ease: "power2.out",
+        });
+    };
 
     return (
         <div>
-            <Link href={href} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <button className="relative z-10 cursor-pointer px-[15px] py-[10px] md:px-[25] md:py-[15px]">
-                    <div ref={bgRef} className="absolute left-0 top-0 h-full w-0 bg-[var(--secondary-color)] -z-10 " />
+            <a href={href} onMouseEnter={() => handleButtonEnter()} onMouseLeave={() => handleButtonLeave()}>
+                <button className="relative z-10 cursor-pointer px-[15px] py-[10px] md:px-[25] md:py-[15px] button">
+                    <div ref={bgRef} className="absolute left-0 top-0 h-full w-0 -z-10 scale-[1.01]" style={{ backgroundColor: "white" }} />
                     {title}
                 </button>
-            </Link>
+            </a>
         </div>
     );
 }
