@@ -40,7 +40,6 @@ export default function ProjectsPage() {
                 if (hoveredRef.current?.id === leavingId) {
                     setHovered(null);
                 }
-                console.log("Animation Completed: ", "Hovered: " + hoveredRef.current?.id, "Prev Hovered: " + leavingId);
             },
         });
     };

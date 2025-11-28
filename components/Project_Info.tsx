@@ -20,9 +20,11 @@ export default function ProjectInfo({
     useGSAP(() => {
         const modal = document.getElementById("project-info");
         modal?.classList.add("overflow-hidden");
+        modal?.classList.add("absolute");
         const tl = gsap.timeline({
             onComplete: () => {
                 modal?.classList.remove("overflow-hidden");
+                modal?.classList.remove("absolute");
                 modal?.classList.add("overflow-visible");
                 backgroundRenderChange();
             },
@@ -34,9 +36,9 @@ export default function ProjectInfo({
             { y: "-100%" },
             {
                 y: "0%",
-                duration: 0.5,
+                duration: 0.3,
                 ease: "power2.inOut",
-                stagger: { from: "edges", each: 0.3 }, // intervalo entre cada animação
+                stagger: { from: "edges", each: 0.12 }, // intervalo entre cada animação
             }
         );
 
@@ -55,19 +57,22 @@ export default function ProjectInfo({
     const handleExit = () => {
         backgroundRenderChange();
         const modal = document.getElementById("project-info");
+
+        modal?.classList.add("absolute");
         modal?.classList.remove("overflow-visible");
         modal?.classList.add("overflow-hidden");
         const tl = gsap.timeline({
             onComplete: () => {
                 modal?.classList.remove("overflow-hidden");
                 modal?.classList.add("overflow-visible");
+                modal?.classList.remove("absolute");
                 onClose();
             },
         });
         tl.to(".content-container", {
             opacity: 0,
             y: 50,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.in",
         });
         tl.to(".background div", {
@@ -82,31 +87,36 @@ export default function ProjectInfo({
         return <div>{dict.projectError}</div>;
     }
     return (
-        <>
-            <section className="absolute top-0 left-0 w-screen z-10" id="project-info">
-                <div className="flex-1">
-                    <div className="relative w-full h-full background">
-                        <div className="w-1/5 left-0 h-full absolute bg-[var(--secondary-color)]" />
-                        <div className="w-1/5 left-1/5 h-full absolute bg-[var(--secondary-color)]" />
-                        <div className="w-1/5 left-2/5 h-full absolute bg-[var(--secondary-color)]" />
-                        <div className="w-1/5 left-3/5 h-full absolute bg-[var(--secondary-color)]" />
-                        <div className="w-1/5 left-4/5 h-full absolute bg-[var(--secondary-color)]" />
+        <div>
+            <section className="z-10 h-auto" id="project-info">
+                <div className="">
+                    <div className="fixed w-full background">
+                        <div className="w-1/5 left-0 h-full fixed bg-[var(--secondary-color)]" />
+                        <div className="w-1/5 left-1/5 h-full fixed bg-[var(--secondary-color)]" />
+                        <div className="w-1/5 left-2/5 h-full fixed bg-[var(--secondary-color)]" />
+                        <div className="w-1/5 left-3/5 h-full fixed bg-[var(--secondary-color)]" />
+                        <div className="w-1/5 left-4/5 h-full fixed bg-[var(--secondary-color)]" />
                     </div>
-                    <div className="content-container flex-col justify-between absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <div className="relative">
-                            <div className="flex justify-between gap-x-[40px] items-center">
-                                <h1>{project.title}</h1>
-                                <div onClick={() => handleExit()}>
-                                    <Button title={dict.return} />
+                    <div className="content-container flex-col justify-between">
+                        <div className="relative flex flex-col gap-y-[20px] md:gap-y-0 md:flex-row-reverse md:justify-between md:items-center ">
+                            <div className="flex gap-x-[20px]">
+                                <div className="w-1/2 md:w-auto" onClick={() => handleExit()}>
+                                    <Button className="w-full" title={dict.return} />
+                                </div>
+                                <div className="w-1/2 md:w-auto">
+                                    <Button className="w-full" title={dict.live} href={project.projectUrl} />
                                 </div>
                             </div>
-                            <p>{project.date}</p>
+                            <div>
+                                <h1>{project.title}</h1>
+                                <p>{project.date}</p>
+                            </div>
                         </div>
-                        <div className="flex flex-col md:flex-row md:gap-x-[20px]">
+                        <div className="flex flex-col md:flex-row md:gap-x-[20px] gap-y-[40px] mt-[80px]">
                             <img className="md:w-1/2" alt={project.title} src={project.imageUrl} />
                             <p className="md:w-1/2">{project.description}</p>
                         </div>
-                        <div className="">
+                        <div className="mt-[100px] ">
                             <h2 className="uppercase">- Tech Stack - </h2>
                             {project.technologies.map((tech, index) => (
                                 <p key={index} className="inline-block mr-2 text-[16px]!">
@@ -117,6 +127,6 @@ export default function ProjectInfo({
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 }

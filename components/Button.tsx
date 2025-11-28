@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import React, { useRef, useState } from "react";
 
-export default function Button({ title, href }: { title: string; href?: string }) {
+export default function Button({ title, href, className }: { title: string; href?: string; className?: string }) {
     const bgRef = useRef<HTMLDivElement | null>(null);
 
     const handleButtonEnter = () => {
@@ -33,7 +33,7 @@ export default function Button({ title, href }: { title: string; href?: string }
     return (
         <div>
             <a href={href} onMouseEnter={() => handleButtonEnter()} onMouseLeave={() => handleButtonLeave()}>
-                <button className="relative z-10 cursor-pointer px-[15px] py-[10px] md:px-[25] md:py-[15px] button">
+                <button className={`${className} relative z-10 cursor-pointer px-[15px] py-[10px] md:px-[25] md:py-[15px] button`}>
                     <div ref={bgRef} className="absolute left-0 top-0 h-full w-0 -z-10 scale-[1.01]" style={{ backgroundColor: "white" }} />
                     {title}
                 </button>

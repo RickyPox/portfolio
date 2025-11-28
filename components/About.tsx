@@ -10,8 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function About() {
     const dict = useLanguage();
 
-    console.log("useLanguage devolve:", dict);
-
     const containerRef = useRef(null);
     const imageRef = useRef(null);
 
@@ -37,10 +35,10 @@ export default function About() {
     }, []);
 
     return (
-        <div className="about" id="about" ref={containerRef}>
-            <div className="h-full content-container md:items-end items-center justify-between">
-                <div className="h-2/3 flex md:flex-row flex-col md:gap-x-[20px] md:gap-y-0 gap-y-[50px]">
-                    <div className="md:w-1/2 h-full overflow-hidden relative">
+        <div className="about " id="about" ref={containerRef}>
+            <div className="content-container  md:items-end items-center justify-between">
+                <div className="flex  md:flex-row flex-col md:gap-x-[20px] md:gap-y-0 gap-y-[50px]">
+                    <div className="md:w-1/2 min-h-[60vh] overflow-hidden relative">
                         <div
                             ref={imageRef}
                             className="absolute top-0 left-0 w-full h-[160%]" // <<< AQUI ESTÁ A MAGIA
