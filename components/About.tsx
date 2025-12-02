@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,7 @@ export default function About() {
 
     const containerRef = useRef(null);
     const imageRef = useRef(null);
+    const titleRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -34,20 +36,34 @@ export default function About() {
         return () => ctx.revert();
     }, []);
 
+    useGSAP(() => {
+        gsap.fromTo(
+            titleRef.current,
+            { y: 0 },
+            {
+                y: "-20%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                },
+            }
+        );
+    }, []);
+
     return (
         <div className="about " id="about" ref={containerRef}>
             <div className="content-container  md:items-end items-center justify-between">
                 <div className="flex  md:flex-row flex-col md:gap-x-[20px] md:gap-y-0 gap-y-[50px]">
                     <div className="md:w-1/2 min-h-[60vh] overflow-hidden relative">
-                        <div
-                            ref={imageRef}
-                            className="absolute top-0 left-0 w-full h-[160%]" // <<< AQUI ESTÁ A MAGIA
-                        >
+                        <div ref={imageRef} className="absolute top-0 left-0 w-full h-[160%]">
                             <img src="/About_Photo.jpg" className="w-full h-full object-cover object-center" />
                         </div>
                     </div>
 
-                    <div className="md:w-1/2 flex flex-col gap-y-[20px]">
+                    <div className="md:w-1/2 flex flex-col gap-y-[20px]" ref={titleRef}>
                         <h1>{dict.about.title}</h1>
                         <p>{dict.about.description}</p>
                     </div>

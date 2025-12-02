@@ -30,7 +30,6 @@ export default function ProjectInfo({
             },
         });
 
-        // anima cada coluna uma de cada vez
         tl.fromTo(
             ".background div",
             { y: "-100%" },
@@ -38,7 +37,7 @@ export default function ProjectInfo({
                 y: "0%",
                 duration: 0.3,
                 ease: "power2.inOut",
-                stagger: { from: "edges", each: 0.12 }, // intervalo entre cada animação
+                stagger: { from: "edges", each: 0.12 },
             }
         );
 
