@@ -3,6 +3,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Button from "./Button";
+import { useRef } from "react";
 
 export default function ProjectInfo({
     id,
@@ -16,6 +17,8 @@ export default function ProjectInfo({
     const dict = useLanguage();
     const projects = projectsByLang[dict.lang as keyof typeof projectsByLang] || projectsByLang["en"];
     const project = projects.find((p) => p.id === id);
+    const backgroundRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         const modal = document.getElementById("project-info");
@@ -30,28 +33,32 @@ export default function ProjectInfo({
             },
         });
 
-        tl.fromTo(
-            ".background div",
-            { y: "-100%" },
-            {
-                y: "0%",
-                duration: 0.3,
-                ease: "power2.inOut",
-                stagger: { from: "edges", each: 0.12 },
-            }
-        );
+        if (backgroundRef.current) {
+            tl.fromTo(
+                backgroundRef.current.children,
+                { y: "-100%" },
+                {
+                    y: "0%",
+                    duration: 0.3,
+                    ease: "power2.inOut",
+                    stagger: { from: "edges", each: 0.12 },
+                }
+            );
+        }
 
-        tl.fromTo(
-            ".content-container",
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.3,
-                ease: "power2.out",
-            }
-        );
-    });
+        if (containerRef.current) {
+            tl.fromTo(
+                containerRef.current,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out",
+                }
+            );
+        }
+    }, [id]);
 
     const handleExit = () => {
         backgroundRenderChange();
@@ -86,17 +93,17 @@ export default function ProjectInfo({
         return <div>{dict.projectError}</div>;
     }
     return (
-        <div>
+        <div className="relative z-50">
             <section className="z-10 h-auto" id="project-info">
                 <div className="">
-                    <div className="fixed w-full background">
+                    <div className="fixed w-full " ref={backgroundRef}>
                         <div className="w-1/5 left-0 h-full fixed bg-[var(--secondary-color)]" />
                         <div className="w-1/5 left-1/5 h-full fixed bg-[var(--secondary-color)]" />
                         <div className="w-1/5 left-2/5 h-full fixed bg-[var(--secondary-color)]" />
                         <div className="w-1/5 left-3/5 h-full fixed bg-[var(--secondary-color)]" />
                         <div className="w-1/5 left-4/5 h-full fixed bg-[var(--secondary-color)]" />
                     </div>
-                    <div className="content-container flex-col justify-between">
+                    <div className="content-container flex-col justify-between" ref={containerRef}>
                         <div className="relative flex flex-col gap-y-[20px] md:gap-y-0 md:flex-row-reverse md:justify-between md:items-center ">
                             <div className="flex gap-x-[20px]">
                                 <div className="w-1/2 md:w-auto" onClick={() => handleExit()}>
