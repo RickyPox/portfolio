@@ -4,76 +4,28 @@ import About from "@/components/About";
 import Landing from "@/components/Landing";
 import Projects from "@/components/Projects";
 import GetInTouch from "@/components/GetInTouch";
-import ProjectInfo from "@/components/Project_Info";
+import ProjectInfo from "@/components/ProjectInfo";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { useLanguage } from "@/context/LanguageContext";
 gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
+    const dict = useLanguage();
+
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
     const [isProjectOpen, setIsProjectOpen] = useState<boolean>(false);
+
     const landingRef = useRef<HTMLElement>(null);
     const aboutRef = useRef<HTMLElement>(null);
     const projectsRef = useRef<HTMLElement>(null);
     const contactRef = useRef<HTMLElement>(null);
+    const projects = dict.projectsInfo;
 
     const handleProjectSelect = (projectId: number) => {
         setSelectedProjectId(projectId);
     };
-
-    useGSAP(() => {
-        const aboutHeight = aboutRef.current?.offsetHeight;
-        const projectsHeight = projectsRef.current?.offsetHeight;
-        const contactHeight = contactRef.current?.offsetHeight;
-
-        gsap.fromTo(
-            aboutRef.current,
-            { y: aboutHeight ? -aboutHeight / 2 : 0 },
-            {
-                y: 0,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: landingRef.current,
-                    start: "top top",
-                    end: "bottom top",
-
-                    scrub: 1,
-                },
-            }
-        );
-        gsap.fromTo(
-            projectsRef.current,
-            { y: 0 },
-            {
-                y: projectsHeight ? -projectsHeight / 2 : 0,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: projectsRef.current,
-                    start: "top bottom",
-                    end: "bottom bottom",
-
-                    scrub: 1,
-                },
-            }
-        );
-        gsap.fromTo(
-            contactRef.current,
-            { marginTop: projectsHeight ? -projectsHeight : 0 },
-            {
-                marginTop: projectsHeight ? -projectsHeight / 2 : 0,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: projectsRef.current,
-                    start: "bottom bottom",
-                    end: "center top",
-                    scrub: 1,
-
-                    pinSpacing: false,
-                },
-            }
-        );
-    }, []);
 
     return (
         <div className="relative">
@@ -82,6 +34,7 @@ export default function Home() {
                     id={selectedProjectId}
                     onClose={() => setSelectedProjectId(null)}
                     backgroundRenderChange={() => setIsProjectOpen(!isProjectOpen)}
+                    projects={projects}
                 />
             )}
 
@@ -94,7 +47,7 @@ export default function Home() {
                         <About />
                     </section>
                     <section ref={projectsRef} className="z-40 relative">
-                        <Projects onProjectOpen={handleProjectSelect} />
+                        <Projects onProjectOpen={handleProjectSelect} projects={projects} />
                     </section>
                     <section ref={contactRef} className="z-30 relative">
                         <GetInTouch />

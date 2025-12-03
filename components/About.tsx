@@ -39,15 +39,17 @@ export default function About() {
         <div className="about " id="about" ref={containerRef}>
             <div className="content-container  md:items-end items-center justify-between">
                 <div className="flex w-full md:flex-row flex-col md:gap-x-[20px] md:gap-y-0 gap-y-[50px]">
-                    <div className="md:w-1/2 min-h-[60vh] overflow-hidden relative">
+                    <div className="md:w-1/3 sm:min-h-[60vh] min-h-[40vh] overflow-hidden relative">
                         <div ref={imageRef} className="absolute top-0 left-0 w-full h-[160%]">
                             <img src="/About_Photo.jpg" className="w-full h-full object-cover object-center" />
                         </div>
                     </div>
 
-                    <div className="md:w-1/2 flex flex-col gap-y-[20px]">
+                    <div className="md:w-2/3 flex flex-col gap-y-[20px]">
                         <h1>{dict.about.title}</h1>
-                        <p>{dict.about.description}</p>
+                        {dict.about.description.map((p: string, i: number) => (
+                            <p key={i}>{p}</p>
+                        ))}
                     </div>
                 </div>
             </div>

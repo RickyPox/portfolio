@@ -1,14 +1,15 @@
 "use client";
-import ProjectInfo from "@/components/Project_Info";
+import Button from "@/components/Button";
+import ProjectInfo from "@/components/ProjectInfo";
 import { useLanguage } from "@/context/LanguageContext";
-import { projectsByLang } from "@/data/projects/index";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 
 export default function ProjectsPage() {
     const dict = useLanguage();
+    const projects = dict.projectsInfo;
     const titleRef = useRef<HTMLParagraphElement | null>(null);
-    const projects = projectsByLang[dict.lang as keyof typeof projectsByLang] || projectsByLang["en"];
+
     const [hovered, setHovered] = useState<{ id: number; x: number; y: number } | null>(null);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
     const [isProjectOpen, setIsProjectOpen] = useState<boolean>(false);
@@ -57,15 +58,20 @@ export default function ProjectsPage() {
                     id={selectedProjectId}
                     onClose={() => setSelectedProjectId(null)}
                     backgroundRenderChange={() => setIsProjectOpen(!isProjectOpen)}
+                    projects={projects}
                 />
             )}
             {isProjectOpen === false && (
                 <div className="relative">
                     <img src="/Projects.jpg" className="w-screen h-screen fixed -z-10"></img>
-                    <div className="content-container flex-col gap-y-[40px]">
-                        <h1>{dict.projects.title}</h1>
-                        <div className="grid grid-cols-4 gap-[20px]">
-                            {projects.map((project) => (
+                    <div className="content-container flex-row gap-x-[40px]">
+                        <div className="flex flex-col gap-y-[30px] w-1/2">
+                            <h1>{dict.projects.title}</h1>
+                            <p>{dict.projects.description}</p>
+                            <Button title={dict.projects.button} href={`${dict.lang}/projects`} />
+                        </div>
+                        <div className="grid grid-cols-2 gap-[20px] w-1/2">
+                            {projects.map((project: any) => (
                                 <div
                                     key={project.id}
                                     className="col-span-1 aspect-video"
@@ -81,8 +87,8 @@ export default function ProjectsPage() {
                                             ref={titleRef}
                                             className="absolute font-[Staatliches]! pointer-events-none "
                                             style={{
-                                                left: hovered.x,
-                                                top: hovered.y,
+                                                left: hovered?.x,
+                                                top: hovered?.y,
                                                 transform: "translate(-50%, -50%)",
                                                 backgroundColor: "var(--secondary-color)",
 

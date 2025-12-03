@@ -2,31 +2,66 @@
     "lang": "en",
 
     "meta": {
-        "title": "Welcome to my multilingual website",
-        "description": "A simple and SEO-friendly multilingual website built with Next.js."
+        "title": "Ricardo Ribeiro - Portfolio",
+        "description": "I'm Ricardo, a frontend developer passionate about building clean, functional and creative web experiences. Explore my projects, skills, and get in touch.",
+        "keywords": ["frontend developer", "programador frontend", "react", "javascript", "gsap", "supabase", "portfolio", "portugal", "web"],
+        "author": "Ricardo Ribeiro",
+        "url": "https://your-domain.com",
+        "image": "https://your-domain.com/preview.jpg",
+        "og_title": "Ricardo Ribeiro - Portfolio",
+        "og_description": "I'm Ricardo, a frontend developer passionate about building clean, functional and creative web experiences. Explore my projects, skills, and get in touch.",
+        "twitter_title": "Ricardo Ribeiro - Portfolio",
+        "twitter_description": "I'm Ricardo, a frontend developer passionate about building clean, functional and creative web experiences. Explore my projects, skills, and get in touch."
     },
     "home": {
         "title": ["Front-end", "Developer"],
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
+        "description": "Crafting digital experiences with vision and precision. Turning ideas into reality. ",
         "button": "Get in Touch"
     },
     "about": {
         "title": "Get to Know me",
-        "description": "I PLAY METIN2 ALL DAY AND TARKOV, NEVER LEAGUE OF LEGENDS OR WITH HAMBLE_JONHY"
+        "description": [
+            "Hello there, fellow visitor. Since you’ve made it this far, I should probably introduce myself. My name is Ricardo, I’m 26 years old, and I like to think of myself as a responsible, dedicated, and creative person — sometimes a bit too much. I studied Communication and Multimedia Design in Coimbra, where I quickly realized that what truly caught my interest was web development.",
+            "I started my journey in frontend because I genuinely enjoy solving problems. That feeling when something finally works exactly as it should? That’s what keeps me going. I enjoy both the visual and logical sides of development, but the truth is: I have the most fun turning ideas into functional logic.",
+            "I mainly work with React and its ecosystem, and I bring interfaces to life with GSAP whenever needed. My work philosophy is simple: everything goes smoother when there’s a clear vision of what’s expected — aligned communication prevents surprises, bugs, and premature grey hairs.",
+            "Day to day, I’m calm, curious, and a bit “optimization-obsessed” (even though I sometimes discover that there was an even better way to do something). Outside of coding, I enjoy sports — especially padel — playing online games with friends, streaming on Twitch, and watching good series and movies.",
+            "Fun fact: I used to compete in athletics and won national medals… so yes, I also know how to run after my goals."
+        ]
     },
     "projects": {
         "title": "Things i've Made",
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
+        "description": "These are the things I’ve made — the good, the great, and the “I swear it worked yesterday.” Every project here reflects what I love most: building, experimenting, and turning ideas into something real.",
         "button": "Explore More"
     },
     "contacts": {
         "title": "Get In Touch",
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
-        "socials": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien.",
+        "description": "Looking for someone to bring your ideas to life? Let’s talk. Whether it’s a job opportunity, a freelance project, or something you think I’d enjoy working on — I’d love to hear from you.",
+        "socials": "If you’d like to follow my journey, see what I'm working on, or stay connected check the links below. You're always welcome there.",
         "button": "Let's Make it Real"
     },
 
     "projectError": "Project Not Found.",
     "return": "Return",
-    "live": "Watch it Live"
+    "live": "Watch it Live",
+
+    "projectsInfo": [
+        {
+            "id": 1,
+            "title": "Zira Houses",
+            "description": "A real estate website for Zira Houses, showcasing properties with detailed information and images.",
+            "imageUrl": "/projects/ZiraHouses.png",
+            "projectUrl": "https://zirahouses.com",
+            "date": "2025",
+            "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Figma", "Vercel"]
+        },
+        {
+            "id": 2,
+            "title": "To-Do List App",
+            "description": " A simple and intuitive to-do list application to help users manage their tasks effectively.",
+            "imageUrl": "/projects/To-Do-List.png",
+            "projectUrl": "#",
+            "date": "2025",
+            "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Figma", "Vercel"]
+        }
+    ]
 }
