@@ -14,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
     const dict = useLanguage();
 
-    const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
     const [isProjectOpen, setIsProjectOpen] = useState<boolean>(false);
 
     const landingRef = useRef<HTMLElement>(null);
@@ -23,36 +22,25 @@ export default function Home() {
     const contactRef = useRef<HTMLElement>(null);
     const projects = dict.projectsInfo;
 
-    const handleProjectSelect = (projectId: number) => {
-        setSelectedProjectId(projectId);
-    };
-
     return (
-        <div className="relative">
-            {selectedProjectId !== null && (
-                <ProjectInfo
-                    id={selectedProjectId}
-                    onClose={() => setSelectedProjectId(null)}
-                    backgroundRenderChange={() => setIsProjectOpen(!isProjectOpen)}
-                    projects={projects}
-                />
+        <div className="relative ">
+            {!isProjectOpen && (
+                <section ref={landingRef} className="z-40 relative">
+                    <Landing />
+                </section>
             )}
-
-            {isProjectOpen === false && (
-                <div className="relative ">
-                    <section ref={landingRef} className="z-40 relative">
-                        <Landing />
-                    </section>
-                    <section ref={aboutRef} className="z-20 relative">
-                        <About />
-                    </section>
-                    <section ref={projectsRef} className="z-40 relative">
-                        <Projects onProjectOpen={handleProjectSelect} projects={projects} />
-                    </section>
-                    <section ref={contactRef} className="z-30 relative">
-                        <GetInTouch />
-                    </section>
-                </div>
+            {!isProjectOpen && (
+                <section ref={aboutRef} className="z-20 relative">
+                    <About />
+                </section>
+            )}
+            <section ref={projectsRef} className="z-40 relative">
+                <Projects onProjectOpen={() => setIsProjectOpen(!isProjectOpen)} projects={projects} />
+            </section>
+            {!isProjectOpen && (
+                <section ref={contactRef} className="z-30 relative">
+                    <GetInTouch />
+                </section>
             )}
         </div>
     );

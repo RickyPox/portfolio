@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function About() {
     const dict = useLanguage();
 
-    const containerRef = useRef(null);
+    const aboutContainerRef = useRef(null);
     const imageRef = useRef(null);
 
     useEffect(() => {
@@ -23,20 +23,20 @@ export default function About() {
                     y: "-35%",
                     ease: "none",
                     scrollTrigger: {
-                        trigger: containerRef.current,
+                        trigger: aboutContainerRef.current,
                         start: "top bottom",
                         end: "bottom top",
                         scrub: 1,
                     },
                 }
             );
-        }, containerRef);
+        }, aboutContainerRef);
 
         return () => ctx.revert();
     }, []);
 
     return (
-        <div className="about " id="about" ref={containerRef}>
+        <div className="about " id="about" ref={aboutContainerRef}>
             <div className="content-container  md:items-end items-center justify-between">
                 <div className="flex w-full md:flex-row flex-col md:gap-x-[20px] md:gap-y-0 gap-y-[50px]">
                     <div className="md:w-1/3 sm:min-h-[60vh] min-h-[40vh] overflow-hidden relative">

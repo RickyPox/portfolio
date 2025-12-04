@@ -15,11 +15,11 @@
     },
     "home": {
         "title": ["Front-end", "Developer"],
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
-        "button": "Get in Touch"
+        "description": "Criando experiências digitais com visão e precisão. Transformando ideias em realidade.",
+        "button": "Fala comigo"
     },
     "about": {
-        "title": "Get to Know me",
+        "title": "Este sou eu",
         "description": [
             "Olá caro utilizador. Já que vieste aqui parar, acho que me devo apresentar. Sou o Ricardo, tenho 26 anos e considero-me uma pessoa responsável, dedicada e criativa — às vezes até demais. Estudei Comunicação e Design Multimédia em Coimbra, e foi aí que descobri que aquilo que realmente me apaixonava era a programação web.",
             "Comecei no desenvolvimento frontend por gostar genuinamente de resolver problemas. Aquela sensação de ver algo finalmente a funcionar sempre me motivou. Gosto tanto de trabalhar a parte visual como a lógica, mas a verdade é que me divirto mais a transformar ideias em lógica funcional.",
@@ -29,20 +29,20 @@
         ]
     },
     "projects": {
-        "title": "Things i've Made",
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
+        "title": "O que eu já fiz",
+        "description": "Estes são projetos que fiz — oss bons, os ótimos e os “juro que ontem funcionava”. Cada projeto aqui reflete aquilo de que mais gosto: construir, experimentar e transformar ideias em algo real.",
         "button": "Explore More"
     },
     "contacts": {
-        "title": "Get In Touch",
-        "description": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu. Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien. Mi feugiat massa neque aliquam accumsan diam arcu.",
-        "socials": "Lorem ipsum dolor sit amet consectetur. Nisl venenatis arcu libero ullamcorper scelerisque amet eu. Integer pretium at semper ac dignissim in sapien.",
-        "button": "Let's Make it Real"
+        "title": "Fala comigo",
+        "description": "Procuras alguém para dar vida às tuas ideias? Vamos falar. Seja uma oportunidade de trabalho, um projeto freelance ou algo em que aches que faça sentido conectar — adorava ouvir-te.",
+        "socials": "Se quiseres acompanhar a minha jornada, ver no que estou a trabalhar ou manter-te a conectado, dá uma olhada nos links abaixo. É sempre um gosto receber-te.",
+        "button": "Vamos tornar real"
     },
 
-    "projectError": "Project Not Found.",
-    "return": "Return",
-    "live": "Watch it Live",
+    "projectError": "Projeto não encontrado.",
+    "return": "Voltar",
+    "live": "Ver ao vivo",
     "projectsInfo": [
         {
             "id": 1,

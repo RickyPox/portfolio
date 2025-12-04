@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Landing = () => {
     const dict = useLanguage();
-    const containerRef = useRef<HTMLDivElement>(null);
+    const landingContainerRef = useRef<HTMLDivElement>(null);
     const nameRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const descriptionRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ const Landing = () => {
                 y: "260%",
                 ease: "none",
                 scrollTrigger: {
-                    trigger: containerRef.current,
+                    trigger: landingContainerRef.current,
                     start: "top top",
                     end: "bottom top",
                     scrub: 1,
@@ -39,7 +39,7 @@ const Landing = () => {
                     y: -(100 + i * 25) + "%",
                     ease: "none",
                     scrollTrigger: {
-                        trigger: containerRef.current,
+                        trigger: landingContainerRef.current,
                         start: "top top",
                         end: "bottom top",
                         scrub: 1,
@@ -55,7 +55,7 @@ const Landing = () => {
                 y: "-50%",
                 ease: "none",
                 scrollTrigger: {
-                    trigger: containerRef.current,
+                    trigger: landingContainerRef.current,
                     start: "top top",
                     end: "bottom top",
                     scrub: 1,
@@ -65,7 +65,7 @@ const Landing = () => {
     }, []);
 
     return (
-        <div className="home" id="home" ref={containerRef}>
+        <div className="home" id="home" ref={landingContainerRef}>
             <div className="relative content-container md:flex-row flex-col md:gap-y-0 gap-y-[20px] md:items-end md:justify-between justify-end">
                 <div className="md:w-1/2 flex flex-col justify-between h-full">
                     <div className="-space-y-[20px]" ref={nameRef}>
