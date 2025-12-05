@@ -126,17 +126,11 @@ section {
 }
 
 section .home {
-    background-image: url("/Landing.jpg");
     flex: 1;
-    background-size: cover;
-    background-position: center center;
 }
 
 section .about {
-    background-image: url("/About.jpg");
     flex: 1;
-    background-size: cover;
-    background-position: center center;
 }
 
 section .projects {
@@ -151,4 +145,7 @@ section .contacts {
     flex: 1;
     background-size: cover;
     background-position: center center;
+}
+h1.clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }

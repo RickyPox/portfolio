@@ -4,7 +4,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "./Button";
 import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
 
+gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
 const Landing = () => {
@@ -15,6 +17,52 @@ const Landing = () => {
     const descriptionRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
+        const tl = gsap.timeline();
+        if (!titleRef.current || !nameRef.current) return;
+        const titleElements = titleRef.current?.querySelectorAll("h1");
+        const name = nameRef.current?.querySelectorAll("h2");
+
+        // ON LOAD ANIMATIONS//
+
+        const split = Array.from(titleElements).map((h1) => new SplitText(h1, { type: "chars" }));
+
+        tl.from(split[0].chars, {
+            y: -150,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power3.out",
+        })
+            .from(split[1].chars, {
+                y: 150,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.05,
+                delay: -1,
+                ease: "power3.out",
+            })
+            .from(
+                name,
+                {
+                    x: -150,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power1.in",
+                    stagger: 0.2,
+                },
+                "-=1"
+            )
+            .from(
+                descriptionRef.current,
+                {
+                    opacity: 0,
+                    duration: 0.3,
+                    ease: "power3.inOut",
+                },
+                "=-0.5"
+            );
+
+        //ON SCROLL ANIMATIONS //
         gsap.fromTo(
             nameRef.current,
             { y: 0 },
@@ -29,23 +77,18 @@ const Landing = () => {
                 },
             }
         );
-        if (!titleRef.current) return;
-        const titleElements = titleRef.current.querySelectorAll("div");
-        titleElements.forEach((el: any, i: any) => {
-            gsap.fromTo(
-                el,
-                { y: 0 },
-                {
-                    y: -(100 + i * 25) + "%",
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: landingContainerRef.current,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: 1,
-                    },
-                }
-            );
+
+        titleElements.forEach((h1: any, i: any) => {
+            gsap.to(h1, {
+                y: -(100 + i * 25) + "%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: landingContainerRef.current,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                },
+            });
         });
 
         gsap.fromTo(
@@ -72,10 +115,10 @@ const Landing = () => {
                         <h2 className="name leading-[50px]!">Ricardo Ribeiro</h2>
                         <h2>2025</h2>
                     </div>
-                    <div ref={titleRef}>
+                    <div ref={titleRef} className="">
                         {dict.home.title.map((text: string, i: number) => (
                             <div key={i}>
-                                <h1>{text}</h1>
+                                <h1 className="clip-path">{text}</h1>
                             </div>
                         ))}
                     </div>

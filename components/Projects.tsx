@@ -2,14 +2,11 @@
 import Button from "@/components/Button";
 import { useLanguage } from "@/context/LanguageContext";
 import gsap from "gsap";
-import { useRef, useState } from "react";
-import ProjectInfo from "./ProjectInfo";
+import { useRef } from "react";
 
-export default function Projects({ onProjectOpen, projects }: { onProjectOpen: () => void; projects: any[] }) {
+export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (project: any) => void; projects: any[] }) {
     const dict = useLanguage();
 
-    const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
-    const [isProjectOpen, setIsProjectOpen] = useState<boolean>(false);
     const titleRefs = useRef<{ [key: number]: HTMLParagraphElement | null }>({});
 
     const handleMouseEnter = (id: number) => {
@@ -33,72 +30,48 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
         });
     };
 
-    const openProject = (id: number) => {
-        setSelectedProjectId(id);
-        onProjectOpen();
-    };
-
-    const closeProject = () => {
-        setSelectedProjectId(null);
-        onProjectOpen();
-    };
-
-    console.log("Open:" + isProjectOpen);
-
     return (
         <div className="relative projects" id="projects">
-            {selectedProjectId && (
-                <ProjectInfo
-                    id={selectedProjectId}
-                    onClose={() => closeProject()}
-                    backgroundRenderChange={() => setIsProjectOpen(!isProjectOpen)}
-                    projects={projects}
-                />
-            )}
-            {isProjectOpen === false && (
-                <div className="relative h-full">
-                    <img src="/Projects.jpg" className="w-screen h-screen fixed -z-10" />
-                    <div className="content-container md:items-end items-center ">
-                        <div className="flex md:flex-row flex-col gap-x-[40px] gap-y-[100px] justify-between">
-                            <div className="flex flex-col gap-y-[30px] lg:w-1/3 md:w-1/2">
-                                <h1>{dict.projects.title}</h1>
-                                <p>{dict.projects.description}</p>
-                                <Button title={dict.projects.button} href={`${dict.lang}/projects`} />
-                            </div>
+            <img src="/Projects.jpg" className="w-screen h-screen fixed -z-10" />
+            <div className="content-container md:items-end items-center ">
+                <div className="flex md:flex-row flex-col gap-x-[40px] gap-y-[100px] justify-between">
+                    <div className="flex flex-col gap-y-[30px] lg:w-1/3 md:w-1/2">
+                        <h1>{dict.projects.title}</h1>
+                        <p>{dict.projects.description}</p>
+                        <Button title={dict.projects.button} href={`${dict.lang}/projects`} />
+                    </div>
 
-                            <div className="grid grid-cols-2 gap-[20px] md:w-1/2">
-                                {projects.map((project) => (
-                                    <div
-                                        key={project.id}
-                                        className="col-span-1 aspect-video relative cursor-pointer"
-                                        onMouseEnter={() => handleMouseEnter(project.id)}
-                                        onMouseLeave={() => handleMouseLeave(project.id)}
-                                        onClick={() => openProject(project.id)}
-                                    >
-                                        <div className="bg-amber-50 w-full h-full" />
+                    <div className="grid grid-cols-2 gap-[20px] md:w-1/2">
+                        {projects.map((project) => (
+                            <div
+                                key={project.id}
+                                className="col-span-1 aspect-video relative cursor-pointer"
+                                onMouseEnter={() => handleMouseEnter(project.id)}
+                                onMouseLeave={() => handleMouseLeave(project.id)}
+                                onClick={() => onProjectOpen(project.id)}
+                            >
+                                <div className="bg-amber-50 w-full h-full" />
 
-                                        <p
-                                            ref={(el) => {
-                                                titleRefs.current[project.id] = el;
-                                            }}
-                                            className="absolute font-[Staatliches]! pointer-events-none"
-                                            style={{
-                                                left: 0,
-                                                bottom: 0,
-                                                padding: "10px",
-                                                backgroundColor: "var(--secondary-color)",
-                                                opacity: 0,
-                                            }}
-                                        >
-                                            {project.title}
-                                        </p>
-                                    </div>
-                                ))}
+                                <p
+                                    ref={(el) => {
+                                        titleRefs.current[project.id] = el;
+                                    }}
+                                    className="absolute font-[Staatliches]! pointer-events-none"
+                                    style={{
+                                        left: 0,
+                                        bottom: 0,
+                                        padding: "10px",
+                                        backgroundColor: "var(--secondary-color)",
+                                        opacity: 0,
+                                    }}
+                                >
+                                    {project.title}
+                                </p>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
-            )}
+            </div>
         </div>
     );
 }
