@@ -68,7 +68,7 @@ export default function About() {
             });
         });
 
-        gsap.to(aboutContainerRef.current, {
+        /*  gsap.to(aboutContainerRef.current, {
             y: "100%",
             scrollTrigger: {
                 trigger: aboutContainerRef.current,
@@ -76,7 +76,7 @@ export default function About() {
                 markers: true,
                 scrub: 1,
             },
-        });
+        }); */
     }, []);
 
     return (

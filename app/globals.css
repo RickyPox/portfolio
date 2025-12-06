@@ -135,7 +135,6 @@ section .about {
 
 section .projects {
     background-image: url("/Projects.jpg");
-    flex: 1;
     background-size: cover;
     background-position: center center;
 }
@@ -148,4 +147,12 @@ section .contacts {
 }
 h1.clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.rfm-marquee {
+    column-gap: 50px;
+}
+
+.rfm-marquee-container {
+    column-gap: 50px;
 }
