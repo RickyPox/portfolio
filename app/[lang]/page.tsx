@@ -11,6 +11,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import ProjectInfo from "@/components/ProjectInfo";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navbar from "@/components/Navbar";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -69,6 +70,9 @@ export default function Home() {
             )}
 
             <div className="relative">
+                <div className="absolute z-80 top-[40px] right-[40px] ">
+                    <Navbar></Navbar>
+                </div>
                 <img src="/Landing.jpg" className="fixed z-20 w-screen h-screen" />
                 <section ref={landingRef} className="z-40 relative">
                     <Landing />

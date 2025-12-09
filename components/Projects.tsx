@@ -18,16 +18,18 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
 
     const [marqueePlay, setMarqueePlay] = useState(false);
 
-    const handleMouseEnter = (id: number) => {
-        const el = titleRefs.current[id];
+    const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+        const el = e.currentTarget.querySelector("p");
         if (!el) return;
+
         gsap.killTweensOf(el);
         gsap.fromTo(el, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3, ease: "power2.out" });
     };
 
-    const handleMouseLeave = (id: number) => {
-        const el = titleRefs.current[id];
+    const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+        const el = e.currentTarget.querySelector("p");
         if (!el) return;
+
         gsap.killTweensOf(el);
         gsap.to(el, { x: 40, opacity: 0, duration: 0.25, ease: "power2.in" });
     };
@@ -44,7 +46,6 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
                 end: "+=2000px",
                 pinSpacing: true,
                 scrub: 1,
-                markers: true,
             },
         });
         tl.fromTo(content, { y: "0%", opacity: 1 }, { y: "-100%", opacity: 0, ease: "power2.inOut" }, 0).to(
@@ -61,7 +62,7 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
                     trigger: section, // pode ser o mesmo trigger
                     start: "bottom bottom",
                     end: "+=1900px",
-                    markers: true,
+
                     scrub: 1,
 
                     // ❗ importante: define a posição relativa na timeline
@@ -105,18 +106,18 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
             <div ref={projectsRef} className="w-full flex absolute bottom-0">
                 <Marquee play={marqueePlay} speed={50} loop={0} autoFill>
                     <div className="gap-x-[50px] flex">
-                        {projects.map((project) => (
+                        {projects.map((project, index) => (
                             <div
-                                key={project.id}
+                                key={index}
                                 className="aspect-video relative cursor-pointer "
-                                onMouseEnter={() => handleMouseEnter(project.id)}
-                                onMouseLeave={() => handleMouseLeave(project.id)}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
                                 onClick={() => onProjectOpen(project.id)}
                             >
                                 <div className="bg-amber-50 w-[30vw] aspect-video" />
                                 <p
                                     ref={(el) => {
-                                        titleRefs.current[project.id] = el;
+                                        titleRefs.current[index] = el;
                                     }}
                                     className="absolute font-[Staatliches]! pointer-events-none"
                                     style={{

@@ -56,11 +56,5 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
     const { lang } = await params; // ⚠️ await aqui também
     const language = await loadLanguage(lang);
 
-    return (
-        <html lang={lang}>
-            <body>
-                <LanguageProvider language={language}>{children}</LanguageProvider>
-            </body>
-        </html>
-    );
+    return <LanguageProvider language={language}>{children}</LanguageProvider>;
 }
