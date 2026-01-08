@@ -1,16 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&family=Stint+Ultra+Condensed&display=swap");
 @import "tailwindcss";
+
 @import "./satoshi.css";
 
 :root {
-    --background: #0a090f;
-    --main-text-color: #efefe6;
-    --hightlight-text: #fff000;
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-main-text: var(--main-text-color);
-    --color-hightlight-text: var(--hightlight-text);
+    --main-color: #ffffff;
+    --secondary-color: #243131;
+    --h1-font-size: 13vw;
+    --h2-font-size: 7vw;
+    --button-font-size: 6vw;
+    --p-font-size: 4vw;
 }
 
 html {
@@ -18,33 +17,142 @@ html {
 }
 
 body {
-    background: var(--background);
+    color: var(--main-color);
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
 }
 
 h1 {
-    font-size: 15.625rem;
-    font-family: "Satoshi-Black";
-    color: var(--main-text-color);
-    letter-spacing: -20px;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--h1-font-size);
+    line-height: calc(var(--h1-font-size) * 0.8);
 }
 
 h2 {
-    font-size: 6rem;
-    font-family: "Satoshi-Black";
-    color: var(--main-text-color);
-    line-height: 76px;
-    letter-spacing: -5px;
+    font-family: "Stint Ultra Condensed", serif;
+    font-weight: 400;
+    font-size: var(--h2-font-size);
 }
 
-.text-highlight {
-    color: var(--hightlight-text) !important;
+h2.name {
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
 }
 
-.main-grid {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+button {
+    font-family: "Stint Ultra Condensed", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--button-font-size);
+    border: solid 2px var(--main-color);
+    text-transform: uppercase;
 }
 
-h1.lineSpacing {
-    line-height: 210px;
+p {
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    font-size: var(--p-font-size);
+    line-height: var(--p-font-size);
+}
+
+.content-container {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-items: center;
+}
+
+@media (min-width: 768px) {
+    .content-container {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: calc(var(--h1-font-size) * 0.65);
+        line-height: calc((var(--h1-font-size) * 0.8) * 0.65);
+    }
+    h2 {
+        font-size: calc(var(--h2-font-size) * 0.65);
+    }
+    p {
+        font-size: calc(var(--p-font-size) * 0.65);
+        line-height: calc(var(--p-font-size) * 0.65);
+    }
+    button {
+        font-size: calc(var(--button-font-size) * 0.65);
+    }
+}
+
+@media (min-width: 1440px) {
+    h1 {
+        font-size: calc(var(--h1-font-size) * 0.5);
+        line-height: calc((var(--h1-font-size) * 0.8) * 0.5);
+    }
+    h2 {
+        font-size: calc(var(--h2-font-size) * 0.5);
+    }
+    p {
+        font-size: calc(var(--p-font-size) * 0.5);
+        line-height: calc(var(--p-font-size) * 0.5);
+    }
+    button {
+        font-size: calc(var(--button-font-size) * 0.5);
+    }
+}
+
+@media (min-width: 1920px) {
+    h1 {
+        font-size: calc(var(--h1-font-size) * 0.4);
+        line-height: calc((var(--h1-font-size) * 0.8) * 0.4);
+    }
+    h2 {
+        font-size: calc(var(--h2-font-size) * 0.4);
+    }
+    p {
+        font-size: calc(var(--p-font-size) * 0.4);
+        line-height: calc(var(--p-font-size) * 0.4);
+    }
+    button {
+        font-size: calc(var(--button-font-size) * 0.4);
+    }
+}
+
+section .home {
+    flex: 1;
+}
+
+section .about {
+    flex: 1;
+}
+
+section .projects {
+    background-image: url("/Projects.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+section .contacts {
+    background-image: url("/Chair.jpg");
+    flex: 1;
+    background-size: cover;
+    background-position: center center;
+}
+h1.clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.rfm-marquee {
+    column-gap: 50px;
+}
+
+.rfm-marquee-container {
+    column-gap: 50px;
 }

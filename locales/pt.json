@@ -1,16 +1,66 @@
 {
+    "lang": "pt",
+
     "meta": {
-        "title": "Welcome to my multilingual website",
-        "description": "A simple and SEO-friendly multilingual website built with Next.js."
+        "title": "Ricardo Ribeiro - Portfólio ",
+        "description": "Sou o Ricardo, um frontend developer apaixonado por criar experiências web funcionais, limpas e criativas. Explora os meus projetos, competências e entra em contacto.",
+        "keywords": ["frontend developer", "programador frontend", "react", "javascript", "gsap", "supabase", "portfolio", "portugal", "web"],
+        "author": "Ricardo Ribeiro",
+        "url": "https://your-domain.com/pt",
+        "image": "https://your-domain.com/preview.jpg",
+        "og_title": "Ricardo Ribeiro - Portfólio ",
+        "og_description": "Sou o Ricardo, um frontend developer apaixonado por criar experiências web funcionais, limpas e criativas. Explora os meus projetos, competências e entra em contacto.",
+        "twitter_title": "Ricardo Ribeiro - Portfólio ",
+        "twitter_description": "Sou o Ricardo, um frontend developer apaixonado por criar experiências web funcionais, limpas e criativas. Explora os meus projetos, competências e entra em contacto."
     },
     "home": {
-        "title": "Bem vindo!",
-        "subtitle": "This is the homepage.",
-        "button": "Get Started"
+        "title": ["Front-end", "Developer"],
+        "description": "Criando experiências digitais com visão e precisão. Transformando ideias em realidade.",
+        "button": "Fala comigo"
     },
     "about": {
-        "title": "About Us",
-        "text": "We are passionate about building web apps.",
-        "button": "Learn More"
-    }
+        "title": "Este sou eu",
+        "description": [
+            "Olá caro utilizador. Já que vieste aqui parar, acho que me devo apresentar. Sou o Ricardo, tenho 26 anos e considero-me uma pessoa responsável, dedicada e criativa — às vezes até demais. Estudei Comunicação e Design Multimédia em Coimbra, e foi aí que descobri que aquilo que realmente me apaixonava era a programação web.",
+            "Comecei no desenvolvimento frontend por gostar genuinamente de resolver problemas. Aquela sensação de ver algo finalmente a funcionar sempre me motivou. Gosto tanto de trabalhar a parte visual como a lógica, mas a verdade é que me divirto mais a transformar ideias em lógica funcional.",
+            "Trabalho principalmente com React e o seu ecossistema, e recorro ao GSAP quando quero dar vida às interfaces. A minha filosofia de trabalho é simples: tudo corre melhor quando existe uma visão clara do que é esperado — comunicação alinhada evita surpresas, bugs e cabelos brancos prematuros.",
+            "No dia a dia sou calmo, curioso e um bocado “obcecado por otimização” (mesmo que às vezes descubra que afinal havia uma forma ainda melhor de fazer algo). Fora do código, gosto de praticar desporto — especialmente padel — jogar videojogos com amigos, fazer streams na Twitch e ver boas séries.",
+            "Fun fact: Já tive medalhas nacionais de atletismo… portanto sim, também sei correr atrás de objetivos."
+        ]
+    },
+    "projects": {
+        "title": "O que eu já fiz",
+        "description": "Estes são projetos que fiz — oss bons, os ótimos e os “juro que ontem funcionava”. Cada projeto aqui reflete aquilo de que mais gosto: construir, experimentar e transformar ideias em algo real.",
+        "button": "Explore More"
+    },
+    "contacts": {
+        "title": "Fala comigo",
+        "description": "Procuras alguém para dar vida às tuas ideias? Vamos falar. Seja uma oportunidade de trabalho, um projeto freelance ou algo em que aches que faça sentido conectar — adorava ouvir-te.",
+        "socials": "Se quiseres acompanhar a minha jornada, ver no que estou a trabalhar ou manter-te a conectado, dá uma olhada nos links abaixo. É sempre um gosto receber-te.",
+        "button": "Vamos tornar real"
+    },
+
+    "projectError": "Projeto não encontrado.",
+    "return": "Voltar",
+    "live": "Ver ao vivo",
+    "projectsInfo": [
+        {
+            "id": 1,
+            "title": "Zira Houses",
+            "description": "A real estate website for Zira Houses, showcasing properties with detailed information and images.",
+            "imageUrl": "/projects/ZiraHouses.png",
+            "projectUrl": "https://zirahouses.com",
+            "date": "2025",
+            "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Figma", "Vercel"]
+        },
+        {
+            "id": 2,
+            "title": "To-Do List App",
+            "description": " A simple and intuitive to-do list application to help users manage their tasks effectively.",
+            "imageUrl": "/projects/To-Do-List.png",
+            "projectUrl": "#",
+            "date": "2025",
+            "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Figma", "Vercel"]
+        }
+    ]
 }
