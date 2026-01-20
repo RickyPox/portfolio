@@ -7,7 +7,7 @@
         "keywords": ["frontend developer", "programador frontend", "react", "javascript", "gsap", "supabase", "portfolio", "portugal", "web"],
         "author": "Ricardo Ribeiro",
         "url": "https://your-domain.com/pt",
-        "image": "https://your-domain.com/preview.jpg",
+        "image": "/MetatagImg.jpg",
         "og_title": "Ricardo Ribeiro - Portfólio ",
         "og_description": "Sou o Ricardo, um frontend developer apaixonado por criar experiências web funcionais, limpas e criativas. Explora os meus projetos, competências e entra em contacto.",
         "twitter_title": "Ricardo Ribeiro - Portfólio ",
