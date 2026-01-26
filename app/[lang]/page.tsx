@@ -54,7 +54,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="relative">
+        <div className="relative ">
             {selectedProjectId && (
                 <ProjectInfo
                     id={selectedProjectId}

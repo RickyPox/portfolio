@@ -125,7 +125,7 @@ export default function ProjectInfo({
                     <img className="md:w-1/2 imgToAnimate" alt={project.title} src={project.imageUrl} />
                     <p className="md:w-1/2 descriptionToAnimate origin-top">{project[`description_${dict.lang}`]}</p>
                 </div>
-                <div className="mt-[100px] techstackToAnimate">
+                <div className="pt-[50px] techstackToAnimate">
                     <h2 className="uppercase ">- Tech Stack - </h2>
                     {project.technologies.map((tech: any, index: number) => (
                         <p key={index} className="inline-block mr-2 text-[16px]!">
