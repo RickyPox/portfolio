@@ -1,64 +1,71 @@
 {
     "projects": [
         {
+            "id": 1,
             "title": "Zira Houses",
             "description_en": "Development of a complete platform for managing and promoting short-term rentals. The main goal was to create an immersive experience that not only showcases the properties but also educates visitors about the surrounding area. The website was designed to be fast, visually appealing, and easy for the owner to manage, resulting in a final product already being used by a real client with active organic traffic.",
             "description_pt": "Desenvolvimento de uma plataforma completa para a gestão e promoção de alojamento local. O objetivo principal foi criar uma experiência imersiva que não só apresenta as propriedades, mas também educa o visitante sobre a zona envolvente. O site foi desenhado para ser rápido, visualmente apelativo e fácil de gerir pelo proprietário, resultando num produto final já utilizado por um cliente real e com tráfego orgânico ativo.",
-            "imageUrl": "",
+            "imageUrl": "/projects/ZiraHouses.webp",
             "projectUrl": "https://zirahouses.com",
             "date": "2025",
             "technologies": ["Next.js", "Supabase", "GSAP", "Tailwind CSS", "Framer"]
         },
         {
+            "id": 2,
             "title": "To-Do List App",
             "description_en": "A project focused on personal productivity that allows users to manage their daily lives in an organized way. This application enables the creation of personalized accounts, ensuring that each user has exclusive access to their own task list. The main focus was creating an intuitive interface with quick search features and immediate visual feedback.",
             "description_pt": "Um projeto focado na produtividade pessoal que permite aos utilizadores gerir o seu dia a dia de forma organizada. Esta aplicação permite a criação de contas personalizadas, garantindo que cada utilizador tem acesso exclusivo à sua lista de tarefas. O foco principal foi a criação de uma interface intuitiva com funcionalidades de pesquisa rápida e feedback visual imediato.",
-            "imageUrl": "",
+            "imageUrl": "/projects/To-Do-List.webp",
             "projectUrl": "https://to-do-list-ricky.vercel.app/",
             "date": "2025",
             "technologies": ["Next.js", "Supabase Auth & DB", "Tailwind CSS", "GSAP", "Framer"]
         },
         {
+            "id": 3,
             "title": "Cartobox",
             "description_en": "A conceptual and technical proposal for the digital repositioning of Cartobox, a company in the cardboard packaging sector. The central goal was to transform the website into something more modern with increased user interaction. Through the implementation of 3D elements and smooth animations, the site comes to life and provides the user with a more engaging visual experience.",
             "description_pt": "Uma proposta conceptual e técnica para o reposicionamento digital da Cartobox, uma empresa do setor de embalagens de cartão. O objetivo central foi transformar um site em algo mais moderno com mais interação com o utilizador. Através da implementação de elementos 3D, e animações suaves o site ganha vida e proporciona ao utilizador uma experiência visual mais apelativa.",
-            "imageUrl": "",
+            "imageUrl": "/projects/Cartobox.webp",
             "projectUrl": "https://cartobox.vercel.app/",
             "date": "2025",
             "technologies": ["Next.js", "Three.js", "React Three Fiber", "GSAP", "Tailwind CSS", "Nodemailer"]
         },
         {
+            "id": 4,
             "title": "Redefine Gaming",
             "description_en": "A conceptual project focused on creating an immersive landing page for the gaming industry. The goal was to push the boundaries of visual design and interactivity, simulating a game’s presentation. The website uses a modern aesthetic, focused on capturing the user's attention through fluid movements and a visual narrative that guides the player through the game's features.",
             "description_pt": "Um projeto conceptual focado na criação de uma página de destino imersiva para a indústria do gaming. O objetivo foi explorar os limites do design visual e da interatividade, simulando a apresentação de um jogo. O site utiliza uma estética moderna, focada em captar a atenção do utilizador através de movimentos fluidos e uma narrativa visual que guia o jogador através das funcionalidades do jogo.",
-            "imageUrl": "",
+            "imageUrl": "/projects/RedefineGaming.webp",
             "projectUrl": "https://gaming-ricky.vercel.app/",
             "date": "2025",
             "technologies": ["Vite", "GSAP", "Tailwind CSS"]
         },
         {
+            "id": 5,
             "title": "SkyRiseLabs",
             "description_en": "SkyriseLabs is an agency specializing in boosting projects within the Web3 ecosystem. The project's focus was to convey authority and innovation, clearly presenting the company's range of services, successful case studies, and performance metrics. The design was tailored for a tech-savvy audience, utilizing a futuristic and clean aesthetic.",
             "description_pt": "SkyriseLabs é uma agência especializada em impulsionar projetos no ecossistema Web3. O foco do projeto foi transmitir autoridade e inovação, apresentando de forma clara o leque de serviços, casos de estudo de sucesso e métricas de desempenho da empresa. O design foi pensado para uma audiência tecnológica, utilizando uma estética futurista e limpa.",
-            "imageUrl": "",
+            "imageUrl": "/projects/SkyRiseLabs.webp",
             "projectUrl": "https://skyriselabs.vercel.app/",
             "date": "2023",
             "technologies": ["Next.js", "GSAP", "Framer Motion", "Tailwind CSS"]
         },
         {
+            "id": 6,
             "title": "Empire DAO",
             "description_en": "Development of a digital hub for EmpireDAO, a decentralized organization focused on promoting artistic works and connecting creators with clients in the Web3 space. The website functions as both a portfolio gallery and a service portal, allowing potential clients to request quotes or partnerships in a direct and organized manner.",
             "description_pt": "Desenvolvimento de um hub digital para a EmpireDAO, uma organização descentralizada focada em promover trabalhos artísticos e conectar criadores a clientes no espaço Web3. O website funciona como uma galeria de portfólio e um portal de serviços, permitindo que potenciais clientes solicitem orçamentos ou parcerias de forma direta e organizada.",
-            "imageUrl": "",
+            "imageUrl": "/projects/EmpireDao.webp",
             "projectUrl": "https://empire-dao.vercel.app/",
             "date": "2025",
             "technologies": ["Next.js", "Nodemailer ", "Framer Motion", "Tailwind CSS"]
         },
         {
+            "id": 7,
             "title": "Mojito Bar",
             "description_en": "A project focused on the restaurant and leisure sector, developed to elevate a bar's digital presence. The website functions as an interactive digital menu, where users can explore the cocktail selection and check prices. The main goal was to create a visual atmosphere that reflects the bar's environment, using motion to guide the user's attention.",
             "description_pt": "Um projeto focado no setor da restauração e lazer, desenvolvido para elevar a presença digital de um bar. O site funciona como uma carta digital interativa, onde os utilizadores podem explorar o menu de cocktails, consultar preços. O objetivo principal foi criar uma atmosfera visual que reflita o ambiente do bar, utilizando movimento para guiar a atenção do utilizador",
-            "imageUrl": "",
+            "imageUrl": "/projects/MojitoBar.webp",
             "projectUrl": "https://mojito-ricky.vercel.app/",
             "date": "2025",
             "technologies": ["Vite", "GSAP", "Tailwind CSS"]
