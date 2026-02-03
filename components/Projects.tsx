@@ -3,9 +3,10 @@ import Button from "@/components/Button";
 import { useLanguage } from "@/context/LanguageContext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Marquee from "react-fast-marquee";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (project: any) => void; projects: any[] }) {
@@ -51,7 +52,7 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
         tl.fromTo(content, { y: "0%", opacity: 1 }, { y: "-100%", opacity: 0, ease: "power2.inOut" }, 0).to(
             content,
             { y: "-100%", ease: "power2.inOut" },
-            0.3
+            0.3,
         );
         tl.fromTo(
             projects,
@@ -65,13 +66,13 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
 
                     scrub: 1,
 
-                    // ❗ importante: define a posição relativa na timeline
+                    // importante: define a posição relativa na timeline
                     // para onde este tween termina
                     onLeave: () => setMarqueePlay(true), // quando PASSA o fim do tween
                     onEnterBack: () => setMarqueePlay(false), // quando volta ANTES do fim
                 },
             },
-            0.2
+            0.2,
         )
             .to(
                 projects,
@@ -79,7 +80,7 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
                     x: "0%",
                     y: "0%",
                 },
-                0.5
+                0.5,
             )
             .fromTo(projects, { y: "0%", bottom: "0%" }, { y: "50%", bottom: "50%" }, 0.5)
             .to(
@@ -88,7 +89,7 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
                     y: "50%",
                     bottom: "50%",
                 },
-                0.8
+                0.8,
             );
     }, []);
 
@@ -99,25 +100,25 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
                     <div className="flex flex-col gap-y-[30px] lg:w-1/3 md:w-1/2" ref={contentRef}>
                         <h1>{dict.projects.title}</h1>
                         <p>{dict.projects.description}</p>
-                        <Button title={dict.projects.button} href={`${dict.lang}/projects`} />
                     </div>
                 </div>
             </div>
+            +
             <div ref={projectsRef} className="w-full flex absolute bottom-0">
                 <Marquee play={marqueePlay} speed={50} loop={0} autoFill>
                     <div className="gap-x-[50px] flex">
-                        {projects.map((project, index) => (
+                        {projects.map((project) => (
                             <div
-                                key={index}
+                                key={project.id}
                                 className="aspect-video relative cursor-pointer "
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => onProjectOpen(project.id)}
                             >
-                                <div className="bg-amber-50 w-[30vw] aspect-video" />
+                                <img src={project.imageUrl} className="bg-amber-50 w-[40vw] aspect-video" />
                                 <p
                                     ref={(el) => {
-                                        titleRefs.current[index] = el;
+                                        titleRefs.current[project.id] = el;
                                     }}
                                     className="absolute font-[Staatliches]! pointer-events-none"
                                     style={{

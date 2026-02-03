@@ -4,27 +4,22 @@ import About from "@/components/About";
 import Landing from "@/components/Landing";
 import Projects from "@/components/Projects";
 import GetInTouch from "@/components/GetInTouch";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
-
-import { useLanguage } from "@/context/LanguageContext";
 import ProjectInfo from "@/components/ProjectInfo";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
 gsap.registerPlugin(ScrollTrigger);
+import { projects } from "@/data/projects.json";
 
 export default function Home() {
-    const dict = useLanguage();
-
     const [isProjectOpen, setIsProjectOpen] = useState<boolean>(false);
     const [selectedProjectId, setSelectedProjectId] = useState<number | null>(null);
-
     const landingRef = useRef<HTMLElement>(null);
     const projectsRef = useRef<HTMLElement>(null);
     const aboutRef = useRef<HTMLElement>(null);
     const contactRef = useRef<HTMLElement>(null);
-    const projects = dict.projectsInfo;
 
     const closeProject = () => {
         setSelectedProjectId(null);
@@ -59,7 +54,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="relative">
+        <div className="relative ">
             {selectedProjectId && (
                 <ProjectInfo
                     id={selectedProjectId}
@@ -70,7 +65,7 @@ export default function Home() {
             )}
 
             <div className="relative">
-                <div className="absolute z-80 top-[40px] right-[40px] ">
+                <div className="absolute z-60 top-[40px] right-[40px] ">
                     <Navbar></Navbar>
                 </div>
                 <img src="/Landing.jpg" className="fixed z-20 w-screen h-screen" />

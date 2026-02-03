@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 interface LangLayoutProps {
     children: React.ReactNode;
-    params: Promise<{ lang: string }>; // ⚠️ params é uma Promise
+    params: Promise<{ lang: string }>;
 }
 
 // Função para carregar idioma dinamicamente
@@ -19,7 +19,7 @@ async function loadLanguage(lang: string) {
 
 // Função para gerar metadata dinamicamente
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
-    const { lang } = await params; // ⚠️ await aqui
+    const { lang } = await params;
     const language = await loadLanguage(lang);
     const meta = language.meta;
 
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 // Layout principal por idioma
 export default async function LangLayout({ children, params }: LangLayoutProps) {
-    const { lang } = await params; // ⚠️ await aqui também
+    const { lang } = await params;
     const language = await loadLanguage(lang);
 
     return <LanguageProvider language={language}>{children}</LanguageProvider>;

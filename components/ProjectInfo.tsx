@@ -21,7 +21,7 @@ export default function ProjectInfo({
     const dict = useLanguage();
     const project = projects.find((p: any) => p.id === id);
     const backgroundRef = useRef<HTMLDivElement>(null);
-
+    console.log(projects);
     useGSAP(() => {
         const tl = gsap.timeline({
             onComplete: () => {
@@ -41,7 +41,7 @@ export default function ProjectInfo({
                     duration: 0.3,
                     ease: "power2.inOut",
                     stagger: { from: "edges", each: 0.12 },
-                }
+                },
             );
         }
 
@@ -96,8 +96,9 @@ export default function ProjectInfo({
     if (!project) {
         return <div>{dict.projectError}</div>;
     }
+
     return (
-        <section className="z-50 inset-0 fixed overflow-y-auto" id="project-info">
+        <section className="z-80 inset-0 fixed overflow-y-auto" id="project-info">
             <div className="fixed w-full " ref={backgroundRef}>
                 <div className="w-1/5 left-0 h-full fixed bg-[var(--secondary-color)]" />
                 <div className="w-1/5 left-1/5 h-full fixed bg-[var(--secondary-color)]" />
@@ -122,9 +123,9 @@ export default function ProjectInfo({
                 </div>
                 <div className="flex flex-col md:flex-row md:gap-x-[20px] gap-y-[40px] mt-[80px]">
                     <img className="md:w-1/2 imgToAnimate" alt={project.title} src={project.imageUrl} />
-                    <p className="md:w-1/2 descriptionToAnimate origin-top">{project.description}</p>
+                    <p className="md:w-1/2 descriptionToAnimate origin-top">{project[`description_${dict.lang}`]}</p>
                 </div>
-                <div className="mt-[100px] techstackToAnimate">
+                <div className="pt-[50px] techstackToAnimate">
                     <h2 className="uppercase ">- Tech Stack - </h2>
                     {project.technologies.map((tech: any, index: number) => (
                         <p key={index} className="inline-block mr-2 text-[16px]!">
