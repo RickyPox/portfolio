@@ -115,7 +115,7 @@ export default function Projects({ onProjectOpen, projects }: { onProjectOpen: (
                                 onMouseLeave={handleMouseLeave}
                                 onClick={() => onProjectOpen(project.id)}
                             >
-                                <img src={project.imageUrl} className="bg-amber-50 w-[40vw] aspect-video" />
+                                <img src={project.imageUrl} className="bg-amber-50 sm:w-[40vw] w-[60vw] aspect-video" />
                                 <p
                                     ref={(el) => {
                                         titleRefs.current[project.id] = el;

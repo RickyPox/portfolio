@@ -51,7 +51,7 @@ const Landing = () => {
                     ease: "power1.in",
                     stagger: 0.2,
                 },
-                "-=1"
+                "-=1",
             )
             .from(
                 descriptionRef.current,
@@ -60,7 +60,7 @@ const Landing = () => {
                     duration: 0.3,
                     ease: "power3.inOut",
                 },
-                "=-0.5"
+                "=-0.5",
             );
 
         //ON SCROLL ANIMATIONS //
@@ -76,7 +76,7 @@ const Landing = () => {
                     end: "bottom top",
                     scrub: 1,
                 },
-            }
+            },
         );
 
         titleElements.forEach((h1: any, i: any) => {
@@ -104,7 +104,7 @@ const Landing = () => {
                     end: "bottom top",
                     scrub: 1,
                 },
-            }
+            },
         );
     }, []);
 
@@ -126,7 +126,7 @@ const Landing = () => {
                 </div>
                 <div className="2xl:w-1/3 md:w-1/2 flex flex-col gap-y-[40px]" ref={descriptionRef}>
                     <p>{dict.home.description}</p>
-                    <Button title={dict.home.button} href="https://www.youtube.com/watch?v=TJxA6-cQJTE&t=1240s"></Button>
+                    <Button title={dict.home.button} href="#contacts"></Button>
                 </div>
             </div>
         </div>

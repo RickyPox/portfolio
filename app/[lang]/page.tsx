@@ -68,7 +68,7 @@ export default function Home() {
                 <div className="absolute z-60 top-[40px] right-[40px] ">
                     <Navbar></Navbar>
                 </div>
-                <img src="/Landing.jpg" className="fixed z-20 w-screen h-screen" />
+                <img src="/Landing.jpg" className="fixed z-20 w-screen h-screen object-cover" />
                 <section ref={landingRef} className="z-40 relative">
                     <Landing />
                 </section>

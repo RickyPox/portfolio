@@ -50,13 +50,26 @@ export default function GetInTouch(lang: any) {
                 <div className=" flex lg:flex-row flex-col lg:gap-x-[100px] lg:gap-y-0 gap-y-[100px] mt-[50px]">
                     <div className="lg:w-1/2 flex flex-col gap-y-[20px] md:gap-y-[40px]" ref={descriptionRef}>
                         <p>{dict.contacts.description}</p>
-                        <Button title={dict.contacts.button} href="#" />
+                        <Button title={dict.contacts.button} href="mailto:ricardojsribeiro99@gmail.com" />
                     </div>
                     <div className="lg:w-1/2" ref={socialsRef}>
                         <p>{dict.contacts.socials}</p>
                         <div className="flex gap-x-[30px] lg:mt-[50px] mt-[30px]">
-                            <p className="font-[Staatliches]!">GitHub</p>
-                            <p className="font-[Staatliches]!">Instagram</p>
+                            <p className="hover:scale-90 transition-all duration-300 ease-in-out">
+                                <a href="https://github.com/RickyPox" target="_blank" rel="noopener noreferrer" className="font-[Staatliches]!">
+                                    GitHub
+                                </a>
+                            </p>
+                            <p className="hover:scale-90 transition-all duration-300 ease-in-out">
+                                <a
+                                    href="https://www.linkedin.com/in/ricardo-ribeiro-17b426399/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-[Staatliches]!"
+                                >
+                                    LinkedIn
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
